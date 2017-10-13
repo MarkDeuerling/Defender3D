@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public float Speed;
     public float ShootRate;
+    public Vector3 BulletOffset;
 
     private const string Horizontal = "Horizontal";
     private const string Vertical = "Vertical";
@@ -26,6 +27,11 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        CanShoot();
+    }
+
+    void CanShoot()
+    {
         time += Time.deltaTime;
         if (time < ShootRate)
             return;
@@ -40,13 +46,7 @@ public class Player : MonoBehaviour
     void Shoot()
     {
         var bullet = Instantiate<Bullet>(game.BulletPref);
-        var position = transform.position;
-        var offset = new Vector3(position.x + 1, position.y, position.z);
-        bullet.transform.position = offset;
-
-        bullet.Speed = 10;
-        bullet.Direction = Vector2.right;
-        bullet.LifeTime = 5f;
+        bullet.transform.position = BulletOffset + transform.position;
     }
 
     void FixedUpdate()

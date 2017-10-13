@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float Speed { get; set; }
-    public Vector2 Direction { get; set; }
-    public float LifeTime { get; set; }
+    public float Speed;
+    public Vector2 Direction;
+    public float LifeTime;
 
     private float time;
 
