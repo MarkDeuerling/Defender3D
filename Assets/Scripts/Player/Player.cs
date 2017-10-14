@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         if (time < ShootRate)
             return;
 
-        time = 0;
+        
 
         var hasFired = Input.GetButton(Fire);
         if (hasFired)
@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
 
     void Shoot()
     {
+        time = 0;
         var bullet = Instantiate<Bullet>(game.BulletPref);
         bullet.transform.position = BulletOffset + transform.position;
     }
