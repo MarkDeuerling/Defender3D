@@ -9,6 +9,10 @@ public class Game : MonoBehaviour
     public Light LightPref;
     public Enemy EnemyPref;
     public Bullet BulletPref;
+    public float SpawnRate;
+    public Vector3 SpawnPosition;
+
+    private Spawner spawner;
 
     void Start()
     {
@@ -20,7 +24,16 @@ public class Game : MonoBehaviour
         var camera = Instantiate<CameraLogic>(CamPref);
         camera.Init(this);
 
-        var enemy = Instantiate<Enemy>(EnemyPref);
-        enemy.Init(this);
+        spawner = new Spawner(this);
+    }
+
+    void Update()
+    {
+        spawner.Update();
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(SpawnPosition, .5f);
     }
 }

@@ -148,6 +148,8 @@ MonoBehaviour:
     type: 2}
   BulletPref: {fileID: 114957422316922964, guid: ee572d2c58fbeeb48ac3498a257c7c41,
     type: 2}
+  SpawnRate: 2
+  SpawnPosition: {x: 6, y: 0, z: 0}
 --- !u!4 &1333540519
 Transform:
   m_ObjectHideFlags: 0

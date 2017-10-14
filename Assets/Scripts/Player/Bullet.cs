@@ -8,20 +8,12 @@ public class Bullet : MonoBehaviour
     public Vector2 Direction;
     public float LifeTime;
 
-    private float time;
-
     private Rigidbody2D body;
 
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-        time += Time.deltaTime;
-        if (time > LifeTime)
-            Destroy(gameObject);
+        Destroy(gameObject, LifeTime);
     }
 
     void FixedUpdate()
