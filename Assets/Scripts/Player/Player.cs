@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -70,9 +69,17 @@ public class Player : MonoBehaviour
 
      private void HealthCondition()
      {
-          if (Health <= 0)
-               Destroy(gameObject);
+          if (Health > 0) 
+               return;
+          SceneManager.UnloadSceneAsync("Game");
+          SceneManager.LoadScene("GameOver");
      }
-     
-     
+
+     private void OnTriggerEnter(Collider entity)
+     {
+          if (entity.HasNot(Tag.Enemy))
+               return;
+          Health--;
+          Destroy(entity.gameObject);
+     }
 }

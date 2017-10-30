@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Runtime.Remoting.Lifetime;
+using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,16 +9,17 @@ public class Enemy : MonoBehaviour
     public Vector3 Offset;
     public float MoveSpeed;
     public float Amplitude;
+    public float LifeTime = 10;
 
     private Rigidbody body;
     private Timer timer;
-    private float seed;
+    private float elapsedTime;
 
     private void Start()
     {
         body = this.GetRigidBody();
         timer = new Timer();
-        seed = Random.value;
+        Destroy(gameObject, LifeTime);
     }
 
     private void Update()
@@ -55,9 +57,9 @@ public class Enemy : MonoBehaviour
 
     private void Move()
     {
-//        var velocity = Vector3.left * MoveSpeed;
-        var velocity = 
-            new Vector3(-MoveSpeed,Mathf.Sin(MoveSpeed*Time.time*seed) * Amplitude,0);
+        elapsedTime += Time.deltaTime;
+        var velocity = new Vector3(
+                -MoveSpeed, Mathf.Sin(MoveSpeed * elapsedTime) * Amplitude, 0);
         
         body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
     }

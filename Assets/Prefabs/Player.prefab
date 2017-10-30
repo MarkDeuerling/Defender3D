@@ -124,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a89afe16ae6d3d4e936671b73fa76ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 10
-  Bullet: {fileID: 1691716116458430, guid: 2a7f4929aae70184a9720ee319426800, type: 2}
+  MoveSpeed: 20
+  Bullet: {fileID: 1449530729623370, guid: 9b2638ff55a293242b10e4a629cca442, type: 2}
   Offset: {x: 2, y: 0, z: 0}
   FireRate: 0.2
-  Health: 1
+  Health: 3

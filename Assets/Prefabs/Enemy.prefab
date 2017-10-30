@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114680140176969698}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,7 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 5
   Bullet: {fileID: 1552881952315898, guid: 6486b41ced15064488a85d452c5e92a2, type: 2}
-  FireRate: 0.3
+  FireRate: 0.5
   Offset: {x: -2, y: 0, z: 0}
-  MoveSpeed: 5
+  MoveSpeed: 2
   Amplitude: 10
+  LifeTime: 10
