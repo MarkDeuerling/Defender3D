@@ -1,48 +1,65 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float MoveSpeed = 10f;
-    public float LifeTime = 4f;
+    public int Health = 1;
+    public GameObject Bullet;
+    public float FireRate;
+    public Vector3 Offset;
+    public float MoveSpeed;
+    public float Amplitude;
 
-    private Game game;
-    private const string BulletTag = "Bullet";
-    private Rigidbody2D body;
+    private Rigidbody body;
+    private Timer timer;
+    private float seed;
 
-    public void Init(Game game)
+    private void Start()
     {
-        this.game = game;
+        body = this.GetRigidBody();
+        timer = new Timer();
+        seed = Random.value;
     }
 
-    void Start()
+    private void Update()
     {
-        body = this.GetRigidbody();
-        Destroy(gameObject, LifeTime);
+        HealthCondition();
+        Shoot();
     }
-    
-    void Update()
+
+    private void FixedUpdate()
     {
         Move();
     }
 
-    void Move()
+    private void OnTriggerEnter(Collider entity)
     {
-        var velocity = Vector2.left * MoveSpeed;
+        if (entity.HasNot(Tag.Bullet))
+            return;
+        Health--;
+        Destroy(entity.gameObject);
+    }
+
+    private void HealthCondition()
+    {
+        if (Health <= 0)
+            Destroy(gameObject);
+    }
+
+    private void Shoot()
+    {
+        if (!timer.IsTimeUp(Time.deltaTime, FireRate))
+            return;
+        Instantiate(Bullet).transform.position = this.GetPosition() + Offset;
+        timer.Reset();
+    }
+
+    private void Move()
+    {
+//        var velocity = Vector3.left * MoveSpeed;
+        var velocity = 
+            new Vector3(-MoveSpeed,Mathf.Sin(MoveSpeed*Time.time*seed) * Amplitude,0);
+        
         body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
     }
-
-    void OnTriggerEnter2D(Collider2D entity)
-    {
-        var isBullet = entity.CompareTag(BulletTag);
-        if (isBullet)
-            DestroyOnHit(entity.gameObject);
-    }
-
-    void DestroyOnHit(GameObject entity)
-    {
-        Destroy(gameObject);
-        Destroy(entity);
-    }
+    
 }
