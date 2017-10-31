@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -73,7 +72,7 @@ public class Player : MonoBehaviour
      private void HealthCondition()
      {
           if (Health <= 0) 
-               game.OnPlayerDie();
+               game.OnGameOver();
      }
 
      private void OnTriggerEnter(Collider entity)

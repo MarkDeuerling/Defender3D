@@ -1,5 +1,4 @@
-﻿using System.Runtime.Remoting.Lifetime;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
@@ -58,8 +57,8 @@ public class Enemy : MonoBehaviour
     private void Move()
     {
         elapsedTime += Time.deltaTime;
-        var velocity = new Vector3(
-                -MoveSpeed, Mathf.Sin(MoveSpeed * elapsedTime) * Amplitude, 0);
+        var sinusMove = Mathf.Sin(MoveSpeed * elapsedTime) * Amplitude;
+        var velocity = new Vector3(-MoveSpeed, sinusMove, 0);
         
         body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
     }

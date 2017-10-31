@@ -9,8 +9,9 @@ public class Game : MonoBehaviour
     private const string Gui = "GUI";
     private const string GameOver = "GameOver";
     private const string MainCamera = "Camera";
+    private const string Pause = "Pause";
+    // current level
     
-
     public static Game Singleton { get; private set; }
     
     public Player ThePlayer { get; set; }
@@ -22,37 +23,33 @@ public class Game : MonoBehaviour
 
     private void Start()
     {
-        LoadScene(MainCamera);
-        LoadScene(Player);
-        LoadScene(Level1);
-        LoadScene(Gui);
+        AddScene(MainCamera);
+        AddScene(Player);
+        AddScene(Level1);
+        AddScene(Gui);
     }
 
     private void Update()
     {
         if (!Input.GetKeyDown(KeyCode.P))
             return;
-        LoadScene("Pause");
+        AddScene(Pause);
         Time.timeScale = 0;
     }
 
-    private void LoadScene(string scene)
+    private void AddScene(string scene)
     {
         SceneManager.LoadScene(scene, LoadSceneMode.Additive);
     }
 
-    private void UnloadScene(string scene)
+    private void LoadScene(string scene)
     {
-        SceneManager.UnloadSceneAsync(scene);
+        SceneManager.LoadScene(scene);
     }
 
-    public void OnPlayerDie()
+    public void OnGameOver()
     {
-        UnloadScene(Player);
-        UnloadScene(Gui);
-        UnloadScene(Level1);
         LoadScene(GameOver);
-        UnloadScene("Game");
     }
     
 }
