@@ -14,9 +14,12 @@ public class Player : MonoBehaviour
      private const string Fire = "Fire1";
      private Rigidbody body;
      private Timer timer;
+     private Game game;
 
      private void Start()
      {
+          game = Game.Singleton;
+          game.ThePlayer = this;
           body = this.GetRigidBody();
           timer = new Timer();
      }
@@ -69,10 +72,8 @@ public class Player : MonoBehaviour
 
      private void HealthCondition()
      {
-          if (Health > 0) 
-               return;
-          SceneManager.UnloadSceneAsync("Game");
-          SceneManager.LoadScene("GameOver");
+          if (Health <= 0) 
+               game.OnPlayerDie();
      }
 
      private void OnTriggerEnter(Collider entity)
