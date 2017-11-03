@@ -7,19 +7,14 @@ public static class Extensions
         return behaviour.GetComponent<Rigidbody>();
     }
     
-    public static Vector3 GetPosition(this GameObject entity)
-    {
-        return entity.transform.position;
-    }
-    
     public static Vector3 GetPosition(this MonoBehaviour behaviour)
     {
         return behaviour.transform.position;
     }
 
-    public static bool Has(this Collider collider, string tag)
+    public static void SetPosition(this GameObject entity, Vector3 position)
     {
-        return collider.gameObject.CompareTag(tag);
+        entity.transform.position = position;
     }
     
     public static bool HasNot(this Collider collider, string tag)

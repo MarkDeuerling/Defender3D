@@ -1,15 +1,18 @@
-﻿public class Timer
+﻿namespace Directives
 {
-    private float timeSum;
+    public struct Timer
+    {
+        private float timeSum;
 
-    public void Reset()
-    {
-        timeSum = 0;
-    }
+        public void Reset()
+        {
+            timeSum = 0;
+        }
     
-    public bool IsTimeUp(float dt, float matchTime)
-    {
-        timeSum += dt;
-        return timeSum > matchTime;
+        public bool IsTimeUp(float dt, float matchTime)
+        {
+            timeSum += dt;
+            return timeSum > matchTime;
+        }
     }
 }

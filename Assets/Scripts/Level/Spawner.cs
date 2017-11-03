@@ -1,27 +1,31 @@
-﻿using UnityEngine;
+﻿using Directives;
+using UnityEngine;
 
-public class Spawner : MonoBehaviour
+namespace Level
 {
-    public GameObject Enemy;
-    public int Count;
-    public int SpawnRate;
-
-    private Timer timer;
-    private int currentCount;
-
-    private void Start()
+    public class Spawner : MonoBehaviour
     {
-        timer = new Timer();
-    }
+        public GameObject Enemy;
+        public int Count;
+        public int SpawnRate;
 
-    private void Update()
-    {
-        if (currentCount == Count)
-            Destroy(gameObject);
-        if (!timer.IsTimeUp(Time.deltaTime, SpawnRate)) 
-            return;
-        Instantiate(Enemy).transform.position = this.GetPosition();
-        timer.Reset();
-        currentCount++;
+        private Timer timer;
+        private int currentCount;
+
+        private void Start()
+        {
+            timer = new Timer();
+        }
+
+        private void Update()
+        {
+            if (currentCount == Count)
+                Destroy(gameObject);
+            if (!timer.IsTimeUp(Time.deltaTime, SpawnRate)) 
+                return;
+            Instantiate(Enemy).SetPosition(this.GetPosition());
+            timer.Reset();
+            currentCount++;
+        }
     }
 }

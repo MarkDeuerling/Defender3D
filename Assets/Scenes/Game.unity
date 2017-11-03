@@ -152,3 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c458264c1ab6dcd479e91f36580bf48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartScenes:
+  - Camera
+  - Player
+  - GUI
+  - Level_1
