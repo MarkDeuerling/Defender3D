@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EventContainer
 {
-    public delegate void CallBack(string evenName, GameObject entity);
+    public delegate void CallBack(GameObject entity);
 
     private readonly Dictionary<string, CallBack> container;
 
@@ -34,6 +34,6 @@ public class EventContainer
         CallBack callBack;
         container.TryGetValue(eventName, out callBack);
         if (callBack != null)
-            callBack(eventName, entity);
+            callBack(entity);
     }
 }

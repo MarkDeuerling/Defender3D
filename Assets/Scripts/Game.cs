@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System.CodeDom;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
     public List<string> StartScenes;
+
+    public const string OnPlayer = "OnPlayer";
 
     private const string GameOver = "GameOver";
     private const string Pause = "Pause";
@@ -19,6 +22,7 @@ public class Game : MonoBehaviour
     private void Start()
     {
         Setup();
+        eventContainer.AddEvent(OnPlayer);
     }
 
     private void Setup()

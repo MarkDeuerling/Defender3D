@@ -21,6 +21,7 @@ namespace Player
         private void Start()
         {
             body = this.GetRigidBody();
+            Game.Execute(Game.OnPlayer, gameObject);
         }
 
         private void Update()
@@ -74,6 +75,7 @@ namespace Player
             Health--;
             Destroy(entity.gameObject);
             HealthCondition();
+            Game.Execute(Game.OnPlayer, gameObject);
         }
 
         private void HealthCondition()
