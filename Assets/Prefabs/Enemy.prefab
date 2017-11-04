@@ -123,10 +123,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc94d8ca955ca444fb397e779f5d71ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shooting:
+    Bullet: {fileID: 1552881952315898, guid: 6486b41ced15064488a85d452c5e92a2, type: 2}
+    FireRate: 0.5
+    Offset: {x: 0, y: 0, z: 0}
+  Movement:
+    MoveSpeed: 2
+    Amplitude: 10
   Health: 5
-  Bullet: {fileID: 1552881952315898, guid: 6486b41ced15064488a85d452c5e92a2, type: 2}
-  FireRate: 0.5
-  Offset: {x: -2, y: 0, z: 0}
-  MoveSpeed: 2
-  Amplitude: 10
   LifeTime: 10

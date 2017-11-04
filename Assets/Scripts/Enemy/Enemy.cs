@@ -1,21 +1,19 @@
 ﻿using Directives;
+using Projectiles;
+using Statics;
 using UnityEngine;
 
 namespace Enemy
 {
     public class Enemy : MonoBehaviour
     {
+        public Shoot Shooting;
+        public EnemyMovement Movement;
         public int Health = 1;
-        public GameObject Bullet;
-        public float FireRate;
-        public Vector3 Offset;
-        public float MoveSpeed;
-        public float Amplitude;
         public float LifeTime = 10;
 
         private Rigidbody body;
         private Timer timer = new Timer();
-        private float elapsedTime;
 
         private void Start()
         {
@@ -30,10 +28,10 @@ namespace Enemy
 
         private void Shoot()
         {
-            if (!timer.IsTimeUp(Time.deltaTime, FireRate))
+            if (!timer.IsTimeUp(Time.deltaTime, Shooting.FireRate))
                 return;
-            var bullet = Instantiate(Bullet);
-            bullet.SetPosition(this.GetPosition() + Offset);
+            var bullet = Instantiate(Shooting.Bullet);
+            bullet.SetPosition(this.GetPosition() + Shooting.Offset);
             timer.Reset();
         }
 
@@ -44,10 +42,10 @@ namespace Enemy
 
         private void Move()
         {
-            elapsedTime += Time.deltaTime;
-            var sinusMove = Mathf.Sin(MoveSpeed * elapsedTime) * Amplitude;
-            var velocity = new Vector3(-MoveSpeed, sinusMove, 0);
-            body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
+            var dt = Time.fixedDeltaTime;
+            var velocity = 
+                new Vector3(-Movement.MoveSpeed, Movement.SinusMove(dt));
+            body.MovePosition(body.position + velocity * dt);
         }
 
         private void OnTriggerEnter(Collider entity)

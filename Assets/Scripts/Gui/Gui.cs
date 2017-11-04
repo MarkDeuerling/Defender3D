@@ -11,14 +11,14 @@ namespace Gui
 
         private void Start()
         {
-            Game.Bind(Game.OnPlayer, OnPlayerUpdate);
+            Game.Bind(Game.PlayerHealthUpdate, OnPlayerUpdate);
             Special.text = "None";
             Score.text = "None";
         }
 
         private void OnDestroy()
         {
-            Game.Unbind(Game.OnPlayer, OnPlayerUpdate);
+            Game.Unbind(Game.PlayerHealthUpdate, OnPlayerUpdate);
         }
 
         private void OnPlayerUpdate(GameObject entity)

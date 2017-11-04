@@ -1,15 +1,15 @@
 ﻿using Directives;
+using Projectiles;
+using Statics;
 using UnityEngine;
 
 namespace Player
 {
     public class Player : MonoBehaviour
     {
-        public GameObject Bullet;
-        public float FireRate = 0.5f;
+        public Shoot Shooting;
         public int Health = 1;
         public float MoveSpeed = 10;
-        public Vector3 Offset;
         
         private const string Horizontal = "Horizontal";
         private const string Vertical = "Vertical";
@@ -21,7 +21,7 @@ namespace Player
         private void Start()
         {
             body = this.GetRigidBody();
-            Game.Execute(Game.OnPlayer, gameObject);
+            Game.Execute(Game.PlayerHealthUpdate, gameObject);
         }
 
         private void Update()
@@ -31,7 +31,7 @@ namespace Player
 
         private void Shoot()
         {
-            if (!timer.IsTimeUp(Time.deltaTime, FireRate))
+            if (!timer.IsTimeUp(Time.deltaTime, Shooting.FireRate))
                 return;
             if (!Input.GetButton(Fire))
                 return;
@@ -41,8 +41,8 @@ namespace Player
 
         private void SpawnBullet()
         {
-            var bullet = Instantiate(Bullet);
-            bullet.transform.position = body.position + Offset;
+            var bullet = Instantiate(Shooting.Bullet);
+            bullet.SetPosition(body.position + Shooting.Offset);
         }
 
         private void FixedUpdate()
@@ -54,7 +54,7 @@ namespace Player
         {
             var horizontal = Input.GetAxis(Horizontal);
             var vertical = Input.GetAxis(Vertical);
-            var velocity = new Vector3(horizontal, vertical, 0);
+            var velocity = new Vector3(horizontal, vertical);
             velocity *= MoveSpeed;
             var position = body.position + velocity * Time.fixedDeltaTime;
             body.MovePosition(Clamp(position));
@@ -75,7 +75,7 @@ namespace Player
             Health--;
             Destroy(entity.gameObject);
             HealthCondition();
-            Game.Execute(Game.OnPlayer, gameObject);
+            Game.Execute(Game.PlayerHealthUpdate, gameObject);
         }
 
         private void HealthCondition()
