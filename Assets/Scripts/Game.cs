@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using GameState;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +8,20 @@ public class Game : MonoBehaviour
     public List<string> StartScenes;
 
     public const string PlayerHealthUpdate = "PlayerHealthUpdate";
-
-    private const string GameOver = "GameOver";
-    private const string Pause = "Pause";
+    public const string Pause = "Pause";
+    public const string GameOver = "GameOver";
+        
+    
+    private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
     private static Game game;
-    
+        
+    public static IGameState CurrentState
+    {
+        get { return game.currentState; }
+        set { game.currentState = value; }
+    }
+
     private void Awake()
     {
         game = this;
@@ -31,25 +40,22 @@ public class Game : MonoBehaviour
 
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.P))
-            return;
-        AddScene(Pause);
-        Time.timeScale = 0;
+        currentState.Update();
     }
 
-    private static void AddScene(string scene)
+    public static void AddScene(string scene)
     {
         SceneManager.LoadScene(scene, LoadSceneMode.Additive);
     }
 
-    private static void LoadScene(string scene)
+    public static void UnLoadScene(string scene)
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.UnloadSceneAsync(scene);
     }
 
-    public static void OnGameOver()
+    public static void LoadScene(string scene)
     {
-        LoadScene(GameOver);
+        SceneManager.LoadScene(scene);
     }
 
     public static void Bind(string name, EventContainer.CallBack callback)
@@ -66,5 +72,5 @@ public class Game : MonoBehaviour
     {
         game.eventContainer.Execute(name, entity);
     }
-
+    
 }

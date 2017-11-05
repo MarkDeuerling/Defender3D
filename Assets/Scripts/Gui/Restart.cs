@@ -1,10 +1,20 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Restart : MonoBehaviour
+namespace Gui
 {
-    public void OnRestart()
+    public class Restart : MonoBehaviour
     {
-        SceneManager.LoadScene("Game");
+        private const string Game = "Game";
+        public void OnRestart()
+        {
+            SceneManager.LoadScene(Game);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+                SceneManager.LoadScene(Game);
+        }
     }
 }

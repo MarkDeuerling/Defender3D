@@ -13,23 +13,23 @@ public class EventContainer
         container = new Dictionary<string, CallBack>();
     }
 
-    public EventContainer AddEvent([NotNull] string eventName)
+    public EventContainer AddEvent(string eventName)
     {
         container.Add(eventName, null);
         return this;
     }
 
-    public void Bind([NotNull] string eventName, [NotNull] CallBack callBack)
+    public void Bind(string eventName, CallBack callBack)
     {
         container[eventName] += callBack;
     }
 
-    public void Unbind([NotNull] string eventName, [NotNull] CallBack callBack)
+    public void Unbind(string eventName, CallBack callBack)
     {
         container[eventName] -= callBack;
     }
 
-    public void Execute([NotNull] string eventName, GameObject entity)
+    public void Execute(string eventName, GameObject entity)
     {
         CallBack callBack;
         container.TryGetValue(eventName, out callBack);

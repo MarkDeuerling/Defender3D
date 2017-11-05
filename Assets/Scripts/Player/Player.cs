@@ -11,12 +11,8 @@ namespace Player
         public int Health = 1;
         public float MoveSpeed = 10;
         
-        private const string Horizontal = "Horizontal";
-        private const string Vertical = "Vertical";
-        private const string Fire = "Fire1";
         private Rigidbody body;
         private Timer timer = new Timer();
-
 
         private void Start()
         {
@@ -33,7 +29,7 @@ namespace Player
         {
             if (!timer.IsTimeUp(Time.deltaTime, Shooting.FireRate))
                 return;
-            if (!Input.GetButton(Fire))
+            if (!Game.CurrentState.Shoot)
                 return;
             SpawnBullet();
             timer.Reset();
@@ -52,9 +48,7 @@ namespace Player
 
         private void Move()
         {
-            var horizontal = Input.GetAxis(Horizontal);
-            var vertical = Input.GetAxis(Vertical);
-            var velocity = new Vector3(horizontal, vertical);
+            var velocity = Game.CurrentState.Move;
             velocity *= MoveSpeed;
             var position = body.position + velocity * Time.fixedDeltaTime;
             body.MovePosition(Clamp(position));
@@ -81,7 +75,7 @@ namespace Player
         private void HealthCondition()
         {
             if (Health <= 0)
-                Game.OnGameOver();
+                Game.LoadScene(Game.GameOver);
         }
     }
 }

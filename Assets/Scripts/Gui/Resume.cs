@@ -1,11 +1,15 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using GameState;
+using UnityEngine;
 
-public class Resume : MonoBehaviour
+namespace Gui
 {
-    public void OnResume()
+    public class Resume : MonoBehaviour
     {
-        Time.timeScale = 1f;
-        SceneManager.UnloadSceneAsync("Pause");
+        public void OnResume()
+        {
+            Time.timeScale = 1f;
+            Game.UnLoadScene(Game.Pause);
+            Game.CurrentState = new PlayerState();
+        }
     }
 }

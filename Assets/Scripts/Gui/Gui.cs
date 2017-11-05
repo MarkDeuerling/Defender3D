@@ -11,17 +11,17 @@ namespace Gui
 
         private void Start()
         {
-            Game.Bind(Game.PlayerHealthUpdate, OnPlayerUpdate);
+            Game.Bind(Game.PlayerHealthUpdate, OnPlayerHealthUpdate);
             Special.text = "None";
             Score.text = "None";
         }
 
         private void OnDestroy()
         {
-            Game.Unbind(Game.PlayerHealthUpdate, OnPlayerUpdate);
+            Game.Unbind(Game.PlayerHealthUpdate, OnPlayerHealthUpdate);
         }
 
-        private void OnPlayerUpdate(GameObject entity)
+        private void OnPlayerHealthUpdate(GameObject entity)
         {
             var player = entity.GetComponent<Player.Player>();
             Health.text = player.Health.ToString();
