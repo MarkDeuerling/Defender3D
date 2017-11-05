@@ -59,8 +59,10 @@ namespace Enemy
 
         private void HealthCondition()
         {
-            if (Health <= 0)
-                Destroy(gameObject);
+            if (Health > 0)
+                return;
+            Game.Execute(Game.ScoreUpdate, gameObject);
+            Destroy(gameObject);
         }
     }
 }

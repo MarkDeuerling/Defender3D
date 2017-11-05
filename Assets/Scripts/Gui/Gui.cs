@@ -9,11 +9,14 @@ namespace Gui
         public Text Health;
         public Text Special;
 
+        private int score;
+
         private void Start()
         {
             Game.Bind(Game.PlayerHealthUpdate, OnPlayerHealthUpdate);
+            Game.Bind(Game.ScoreUpdate, OnScoreUpdate);
             Special.text = "None";
-            Score.text = "None";
+            Score.text = score.ToString();
         }
 
         private void OnDestroy()
@@ -25,6 +28,11 @@ namespace Gui
         {
             var player = entity.GetComponent<Player.Player>();
             Health.text = player.Health.ToString();
+        }
+
+        private void OnScoreUpdate(GameObject entity)
+        {
+            Score.text = (++score).ToString();
         }
     }
 }

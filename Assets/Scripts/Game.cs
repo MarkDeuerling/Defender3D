@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
     public List<string> StartScenes;
 
     public const string PlayerHealthUpdate = "PlayerHealthUpdate";
+    public const string ScoreUpdate = "ScoreUpdate";
     public const string Pause = "Pause";
     public const string GameOver = "GameOver";
         
@@ -35,7 +36,9 @@ public class Game : MonoBehaviour
     private void Setup()
     {
         StartScenes.ForEach(AddScene);
-        eventContainer.AddEvent(PlayerHealthUpdate);
+        eventContainer
+            .AddEvent(PlayerHealthUpdate)
+            .AddEvent(ScoreUpdate);
     }
 
     private void Update()
