@@ -4,16 +4,20 @@ namespace GameState
 {
     public class PlayerState : IGameState
     {
-        private const string H = "Horizontal";
-        private const string V = "Vertical";
-        private const string F = "Fire1";
+        private const string Horizontal = "Horizontal";
+        private const string Vertical = "Vertical";
+        private const string Fire = "Fire1";
 
         public Vector3 Move
         {
-            get { return new Vector3(Input.GetAxis(H), Input.GetAxis(V)); }
+            get 
+            { 
+                return new Vector3(
+                    Input.GetAxis(Horizontal), Input.GetAxis(Vertical)); 
+            }
         }
         
-        public bool Shoot { get { return Input.GetButton(F); } }
+        public bool Shoot { get { return Input.GetButton(Fire); } }
 
         public void Update()
         {
