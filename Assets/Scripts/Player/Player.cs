@@ -70,6 +70,7 @@ namespace Player
             Destroy(entity.gameObject);
             HealthCondition();
             Game.Execute(Game.PlayerHealthUpdate, gameObject);
+            Game.Execute(Game.Hit, gameObject);
         }
 
         private void HealthCondition()
