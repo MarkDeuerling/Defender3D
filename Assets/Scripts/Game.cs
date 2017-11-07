@@ -12,7 +12,6 @@ public class Game : MonoBehaviour
     public const string Hit = "Hit";
     public const string Pause = "Pause";
     public const string GameOver = "GameOver";
-        
     
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();

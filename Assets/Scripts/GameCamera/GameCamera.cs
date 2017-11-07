@@ -16,6 +16,11 @@ namespace GameCamera
             Game.Bind(Game.Hit, OnHit);
         }
 
+        private void OnDestroy()
+        {
+            Game.Unbind(Game.Hit, OnHit);
+        }
+
         private void OnHit(GameObject entity)
         {
             shakeDuration = ShakeDuration;
