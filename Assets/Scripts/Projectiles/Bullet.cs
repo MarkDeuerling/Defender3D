@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace Projectiles
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(BoxCollider))]
     public class Bullet : MonoBehaviour
     {
         public float MoveSpeed;

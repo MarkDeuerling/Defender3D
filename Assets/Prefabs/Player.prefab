@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shooting:
-    Bullet: {fileID: 1449530729623370, guid: 9b2638ff55a293242b10e4a629cca442, type: 2}
+    Bullet: {fileID: 1609548733927138, guid: 5899a1a9cf491f341af97b6674758b23, type: 2}
     FireRate: 0.2
     Offset: {x: 2, y: 0, z: 0}
   Health: 3
