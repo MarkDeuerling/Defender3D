@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Statics;
+using UnityEngine;
 
 namespace GameCamera
 {
@@ -12,7 +13,7 @@ namespace GameCamera
 
         private void Start()
         {
-            originalPos = transform.localPosition;
+            originalPos = this.GetPosition();
             Game.Bind(Game.Hit, OnHit);
         }
 
@@ -29,14 +30,15 @@ namespace GameCamera
         private void Update()
         {
             if (shakeDuration > 0)
-            {
-                transform.localPosition = originalPos + Random.insideUnitSphere * ShakeAmount;
-                shakeDuration -= Time.deltaTime * DecreaseFactor;
-            }
+                Shake();
             else
-            {
-                transform.localPosition = originalPos;
-            }
+                transform.position = originalPos;
+        }
+
+        private void Shake()
+        {
+            transform.position = originalPos + Random.insideUnitSphere * ShakeAmount;
+            shakeDuration -= Time.deltaTime * DecreaseFactor;
         }
 
     }
