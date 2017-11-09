@@ -17,6 +17,9 @@ ModelImporter:
     100018: pCylinder3 1
     100020: transform1
     100022: transform2
+    100024: pCube4
+    100026: group3
+    100028: pCube5
     400000: //RootNode
     400002: group1
     400004: group2
@@ -29,22 +32,33 @@ ModelImporter:
     400018: pCylinder3 1
     400020: transform1
     400022: transform2
+    400024: pCube4
+    400026: group3
+    400028: pCube5
     2300000: pCube1
     2300002: pCube2
     2300004: pCube3
     2300006: pCylinder1
     2300008: pCylinder3
+    2300010: pCube4
+    2300012: pCube5
     3300000: pCube1
     3300002: pCube2
     3300004: pCube3
     3300006: pCylinder1
     3300008: pCylinder3
+    3300010: pCube4
+    3300012: pCube5
     4300000: pCylinder1
     4300002: pCube1
     4300004: pCube3
     4300006: pCube2
     4300008: pCylinder3
-    7400000: Take 001
+    4300010: pCube4
+    4300012: pCube5
+    7400000: Intro
+    7400002: Open Mouth
+    7400004: Arms
     9500000: //RootNode
   externalObjects:
   - first:
@@ -79,7 +93,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Intro
       takeName: Take 001
       firstFrame: 1
       lastFrame: 70
@@ -106,6 +120,62 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Open Mouth
+      takeName: Take 001
+      firstFrame: 75
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    - serializedVersion: 16
+      name: Arms
+      takeName: Take 001
+      firstFrame: 135
+      lastFrame: 255
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
