@@ -13,11 +13,14 @@ namespace Player
         public Vector3 Center;
         public Vector3 HitBox;
         public Collider[] colliders;
+
+        private Vector3 position;
         
         public bool HasTarget { get; private set; }
 
         public void Shoot(Vector3 position)
         {
+            this.position = position;
             var target = Physics.OverlapBoxNonAlloc(
                 Center, 
                 HitBox, 
@@ -25,13 +28,14 @@ namespace Player
                 Quaternion.identity, 
                 1 << LayerMask.NameToLayer(Tag.Hitable));
             HasTarget = target > 0;
-            colliders.ToList().ForEach(collider => FindTarget(collider, position));
+            colliders
+                .Where(e => e != null)
+                .ToList()
+                .ForEach(FindTarget);
         }
 
-        private void FindTarget(Component collider, Vector3 position)
+        private void FindTarget(Collider collider)
         {
-            if (collider == null)
-                return;
             var entity = Object.Instantiate(Bullet);
             var bullet = entity.GetSpecialBullet();
             bullet.SetPosition(position + new Vector3(0,0,Random.value*10));

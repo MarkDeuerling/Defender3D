@@ -14,6 +14,7 @@ namespace Player
         
         private Rigidbody body;
         private Timer timer = new Timer();
+        private Timer specialTimer = new Timer();
 
         private void Start()
         {
@@ -54,7 +55,7 @@ namespace Player
             
             if (SpecialAtk.UseCount < 1)
                 return;
-            if (!timer.IsTimeUp(Time.fixedDeltaTime, SpecialAtk.FireRate))
+            if (!specialTimer.IsTimeUp(Time.fixedDeltaTime, SpecialAtk.FireRate))
                 return;
             if (!Game.CurrentState.Special)
                 return;
@@ -62,7 +63,7 @@ namespace Player
             if (!SpecialAtk.HasTarget)
                 return;
             SpecialAtk.UseCount--;
-            timer.Reset();
+            specialTimer.Reset();
             Game.Execute(Game.SpecialUpdate, gameObject);
         }
 
