@@ -33,7 +33,7 @@ namespace Player
             if (collider == null)
                 return;
             var entity = Object.Instantiate(Bullet);
-            var bullet = entity.GetComponent<Projectiles.Special>();
+            var bullet = entity.GetSpecialBullet();
             bullet.SetPosition(position + new Vector3(0,0,Random.value*10));
             bullet.Target = collider.gameObject;
         }

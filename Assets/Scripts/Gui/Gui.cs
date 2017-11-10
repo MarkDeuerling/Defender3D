@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Statics;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Gui
@@ -39,7 +40,7 @@ namespace Gui
 
         private void OnSpecialUpdate(GameObject entity)
         {
-            var player = entity.GetComponent<Player.Player>();
+            var player = entity.GetPlayer();
             Special.text = player.SpecialAtk.UseCount.ToString();
         }
     }

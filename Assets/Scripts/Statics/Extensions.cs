@@ -8,7 +8,18 @@ namespace Statics
         {
             return behaviour.GetComponent<Rigidbody>();
         }
-    
+
+        public static Projectiles.Special GetSpecialBullet(
+            this GameObject entity)
+        {
+            return entity.GetComponent<Projectiles.Special>();
+        }
+
+        public static Player.Player GetPlayer(this GameObject entity)
+        {
+            return entity.GetComponent<Player.Player>();
+        }
+        
         public static Vector3 GetPosition(this MonoBehaviour behaviour)
         {
             return behaviour.transform.position;
