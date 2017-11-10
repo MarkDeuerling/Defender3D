@@ -51,6 +51,7 @@ namespace Player
 
         private void SpecialShoot()
         {
+            
             if (SpecialAtk.UseCount < 1)
                 return;
             if (!timer.IsTimeUp(Time.fixedDeltaTime, SpecialAtk.FireRate))
@@ -58,6 +59,8 @@ namespace Player
             if (!Game.CurrentState.Special)
                 return;
             SpecialAtk.Shoot(this.GetPosition());
+            if (!SpecialAtk.HasTarget)
+                return;
             SpecialAtk.UseCount--;
             timer.Reset();
             Game.Execute(Game.SpecialUpdate, gameObject);
