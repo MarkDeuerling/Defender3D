@@ -8,11 +8,17 @@ namespace Player
     public class Player : MonoBehaviour
     {
         public Shoot Shooting;
+        public Special SpecialAtk;
         public int Health = 1;
         public float MoveSpeed = 10;
         
         private Rigidbody body;
         private Timer timer = new Timer();
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireCube(SpecialAtk.Center, SpecialAtk.HalfSize);
+        }
 
         private void Start()
         {
@@ -44,6 +50,21 @@ namespace Player
         private void FixedUpdate()
         {
             Move();
+            SpecialShoot();   
+        }
+
+        private void SpecialShoot()
+        {
+            if (SpecialAtk.UseCount < 1)
+                return;
+            if (!timer.IsTimeUp(Time.fixedDeltaTime, SpecialAtk.FireRate))
+                return;
+            if (!Input.GetKey(KeyCode.K))
+                return;
+            SpecialAtk.Shoot(this.GetPosition());
+            SpecialAtk.UseCount--;
+            timer.Reset();
+            
         }
 
         private void Move()

@@ -50,9 +50,24 @@ namespace Enemy
 
         private void OnTriggerEnter(Collider entity)
         {
+            HitOnBullet(entity);
+            HitOnSpecial(entity);
+        }
+
+        private void HitOnBullet(Collider entity)
+        {
             if (entity.HasNot(Tag.Bullet))
                 return;
             Health--;
+            Destroy(entity.gameObject);
+            HealthCondition();
+        }
+
+        private void HitOnSpecial(Collider entity)
+        {
+            if (entity.HasNot(Tag.Special))
+                return;
+            Health = 0;
             Destroy(entity.gameObject);
             HealthCondition();
         }
