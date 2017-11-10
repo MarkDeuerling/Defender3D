@@ -131,11 +131,11 @@ MonoBehaviour:
     FireRate: 0.2
     Offset: {x: 2, y: 0, z: 0}
   SpecialAtk:
-    Bullet: {fileID: 114554693875779260, guid: f9b82d6c9547f2d4ca74c973e1dfe667, type: 2}
-    FireRate: 0.5
+    Bullet: {fileID: 1266628165718882, guid: f9b82d6c9547f2d4ca74c973e1dfe667, type: 2}
+    FireRate: 1
     UseCount: 3
     Center: {x: 0, y: 0, z: 0}
-    HalfSize: {x: 10, y: 10, z: 10}
+    HitBox: {x: 10, y: 10, z: 10}
     colliders:
     - {fileID: 0}
     - {fileID: 0}
