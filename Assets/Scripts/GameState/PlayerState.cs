@@ -18,6 +18,7 @@ namespace GameState
         }
         
         public bool Shoot { get { return Input.GetButton(Fire); } }
+        public bool Special { get { return Input.GetKey(KeyCode.K); } }
 
         public void Update()
         {

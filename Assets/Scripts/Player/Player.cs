@@ -15,15 +15,11 @@ namespace Player
         private Rigidbody body;
         private Timer timer = new Timer();
 
-        private void OnDrawGizmos()
-        {
-            Gizmos.DrawWireCube(SpecialAtk.Center, SpecialAtk.HalfSize);
-        }
-
         private void Start()
         {
             body = this.GetRigidBody();
             Game.Execute(Game.PlayerHealthUpdate, gameObject);
+            Game.Execute(Game.SpecialUpdate, gameObject);
         }
 
         private void Update()
@@ -59,12 +55,12 @@ namespace Player
                 return;
             if (!timer.IsTimeUp(Time.fixedDeltaTime, SpecialAtk.FireRate))
                 return;
-            if (!Input.GetKey(KeyCode.K))
+            if (!Game.CurrentState.Special)
                 return;
             SpecialAtk.Shoot(this.GetPosition());
             SpecialAtk.UseCount--;
             timer.Reset();
-            
+            Game.Execute(Game.SpecialUpdate, gameObject);
         }
 
         private void Move()

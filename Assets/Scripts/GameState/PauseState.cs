@@ -5,7 +5,8 @@ namespace GameState
     public class PauseState : IGameState
     {
         public Vector3 Move { get { return Vector3.zero; } }
-        public bool Shoot { get { return false; }}
+        public bool Shoot { get { return false; } }
+        public bool Special { get { return false; } }
 
         public void Update()
         {

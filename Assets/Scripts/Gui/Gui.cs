@@ -15,13 +15,15 @@ namespace Gui
         {
             Game.Bind(Game.PlayerHealthUpdate, OnPlayerHealthUpdate);
             Game.Bind(Game.ScoreUpdate, OnScoreUpdate);
-            Special.text = "None";
+            Game.Bind(Game.SpecialUpdate, OnSpecialUpdate);
             Score.text = score.ToString();
         }
 
         private void OnDestroy()
         {
             Game.Unbind(Game.PlayerHealthUpdate, OnPlayerHealthUpdate);
+            Game.Unbind(Game.ScoreUpdate, OnScoreUpdate);
+            Game.Unbind(Game.SpecialUpdate, OnSpecialUpdate);
         }
 
         private void OnPlayerHealthUpdate(GameObject entity)
@@ -33,6 +35,12 @@ namespace Gui
         private void OnScoreUpdate(GameObject entity)
         {
             Score.text = (++score).ToString();
+        }
+
+        private void OnSpecialUpdate(GameObject entity)
+        {
+            var player = entity.GetComponent<Player.Player>();
+            Special.text = player.SpecialAtk.UseCount.ToString();
         }
     }
 }

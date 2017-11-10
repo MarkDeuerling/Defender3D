@@ -9,6 +9,7 @@ public class Game : MonoBehaviour
 
     public const string PlayerHealthUpdate = "PlayerHealthUpdate";
     public const string ScoreUpdate = "ScoreUpdate";
+    public const string SpecialUpdate = "SpecialUpdate";
     public const string Hit = "Hit";
     public const string Pause = "Pause";
     public const string GameOver = "GameOver";
@@ -39,7 +40,8 @@ public class Game : MonoBehaviour
         eventContainer
             .AddEvent(PlayerHealthUpdate)
             .AddEvent(ScoreUpdate)
-            .AddEvent(Hit);
+            .AddEvent(Hit)
+            .AddEvent(SpecialUpdate);
     }
 
     private void Update()

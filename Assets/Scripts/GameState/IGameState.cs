@@ -6,6 +6,7 @@ namespace GameState
     {
         Vector3 Move { get; }
         bool Shoot { get; }
+        bool Special { get; }
         void Update();
 
     }

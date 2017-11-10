@@ -7,18 +7,18 @@ namespace Player
     [System.Serializable]
     public class Special
     {
-        public Projectiles.Special Bullet;
+        public GameObject Bullet;
         public float FireRate;
         public float UseCount;
         public Vector3 Center;
-        public Vector3 HalfSize;
+        public Vector3 HitBox;
         public Collider[] colliders;
 
         public void Shoot(Vector3 position)
         {
             Physics.OverlapBoxNonAlloc(
                 Center, 
-                HalfSize, 
+                HitBox, 
                 colliders, 
                 Quaternion.identity, 
                 1 << LayerMask.NameToLayer(Tag.Hitable));
@@ -29,8 +29,9 @@ namespace Player
         {
             if (collider == null)
                 return;
-            var bullet = Object.Instantiate(Bullet);
-            bullet.SetPosition(position);
+            var entity = Object.Instantiate(Bullet);
+            var bullet = entity.GetComponent<Projectiles.Special>();
+            bullet.SetPosition(position + new Vector3(0,0,Random.value*10));
             bullet.Target = collider.gameObject;
         }
     }
