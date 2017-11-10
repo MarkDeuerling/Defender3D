@@ -13,7 +13,7 @@ namespace Projectiles
 
 		private Rigidbody body;
 
-		public GameObject Target { get; set; }
+		public GameObject Target { private get; set; }
 
 		private void Start()
 		{
@@ -38,7 +38,7 @@ namespace Projectiles
 
 		private void Move()
 		{
-			var velocity = transform.up * MoveSpeed;
+			var velocity = transform.forward * MoveSpeed;
 			body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
 		}
 	}
