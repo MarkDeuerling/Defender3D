@@ -13,6 +13,11 @@ ModelImporter:
     100010: pCube3
     100012: pCube4
     100014: pCube5
+    100016: group1
+    100018: group2
+    100020: group3
+    100022: group4
+    100024: group5
     400000: pCube2
     400002: pCylinder1
     400004: //RootNode
@@ -21,6 +26,11 @@ ModelImporter:
     400010: pCube3
     400012: pCube4
     400014: pCube5
+    400016: group1
+    400018: group2
+    400020: group3
+    400022: group4
+    400024: group5
     2300000: pCube2
     2300002: pCylinder1
     2300004: pCube1
@@ -39,6 +49,7 @@ ModelImporter:
     4300006: pCube5
     4300008: pCube4
     4300010: pCube3
+    7400000: Take 001
     9500000: //RootNode
   externalObjects:
   - first:
