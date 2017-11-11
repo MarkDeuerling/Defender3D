@@ -10,6 +10,7 @@ public class Game : MonoBehaviour
     public const string PlayerHealthUpdate = "PlayerHealthUpdate";
     public const string ScoreUpdate = "ScoreUpdate";
     public const string SpecialUpdate = "SpecialUpdate";
+    public const string PlayerBind = "PlayerBind";
     public const string Hit = "Hit";
     public const string Pause = "Pause";
     public const string GameOver = "GameOver";
@@ -17,6 +18,8 @@ public class Game : MonoBehaviour
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
     private static Game game;
+    
+    public static GameObject Player { get; private set; }
         
     public static IGameState CurrentState
     {
@@ -32,6 +35,7 @@ public class Game : MonoBehaviour
     private void Start()
     {
         Setup();
+        BindPlayer();
     }
 
     private void Setup()
@@ -41,9 +45,20 @@ public class Game : MonoBehaviour
             .AddEvent(PlayerHealthUpdate)
             .AddEvent(ScoreUpdate)
             .AddEvent(Hit)
-            .AddEvent(SpecialUpdate);
+            .AddEvent(SpecialUpdate)
+            .AddEvent(PlayerBind);
     }
 
+    private static void BindPlayer()
+    {
+        Bind(PlayerBind, OnPlayerBind);
+    }
+    
+    private static void OnPlayerBind(GameObject entity)
+    {
+        Player = entity;
+    }
+    
     private void Update()
     {
         currentState.Update();
@@ -78,5 +93,4 @@ public class Game : MonoBehaviour
     {
         game.eventContainer.Execute(name, entity);
     }
-    
 }

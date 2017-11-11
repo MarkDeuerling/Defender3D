@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace Player
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(BoxCollider))]
     public class Player : MonoBehaviour
     {
         public Shoot Shooting;
@@ -21,6 +23,7 @@ namespace Player
             body = this.GetRigidBody();
             Game.Execute(Game.PlayerHealthUpdate, gameObject);
             Game.Execute(Game.SpecialUpdate, gameObject);
+            Game.Execute(Game.PlayerBind, gameObject);
         }
 
         private void Update()

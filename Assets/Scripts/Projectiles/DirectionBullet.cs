@@ -18,15 +18,14 @@ namespace Projectiles
 		private void Start()
 		{
 			body = this.GetRigidBody();
-			direction = Target.GetPosition() - this.GetPosition();
-			direction.Normalize();
+			direction = this.GetDirectionTo(Target);
 			Destroy(gameObject, DestroyTime);
 		}
 
 		private void FixedUpdate()
 		{
 			var velocity = direction * MoveSpeed;
-			body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
+			body.Move(velocity);
 		}
 	}
 }

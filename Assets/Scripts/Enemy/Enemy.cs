@@ -1,44 +1,58 @@
-﻿using System.Linq;
-using Directives;
+﻿using Directives;
 using Projectiles;
 using Statics;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Enemy
 {
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(BoxCollider))]
     public class Enemy : MonoBehaviour
     {
         public Shoot Shooting;
-        public EnemyMovement Movement;
+        public SinusMovement Sinus;
         public LineMovement Line;
         public MoveShoot MoveAndShoot;
         public int Health = 1;
         public float LifeTime = 10;
+        public Pattern Patter;
 
+        private delegate void Movement();
+
+        private Movement movement;
         private Rigidbody body;
         private Timer timer = new Timer();
-        private Timer st = new Timer();
+        private Timer shootTimer = new Timer();
 
         private void Start()
         {
             body = this.GetRigidBody();
             Destroy(gameObject, LifeTime);
-            
-            foreach (var rootGameObject in SceneManager
-                .GetSceneByName("Player")
-                .GetRootGameObjects())
+            if (Patter == Pattern.MoveAndShoot)
+                FindPlayer();
+            switch (Patter)
             {
-                if (!rootGameObject.CompareTag("Player")) 
-                    continue;
-                MoveAndShoot.TargetPlayer = rootGameObject;
-                break;
+                case Pattern.Sinus:
+                    movement = SinusMove;
+                    break;
+                case Pattern.Line:
+                    movement = LineMove;
+                    break;
+                case Pattern.MoveAndShoot:
+                    movement = MoveWithShoot;
+                    break;
             }
+        }
+
+        private void FindPlayer()
+        {
+            MoveAndShoot.Target = Game.Player;
         }
 
         private void Update()
         {
-//            Shoot();
+            if (Patter == Pattern.Sinus || Patter == Pattern.Line)
+                Shoot();
         }
 
         private void Shoot()
@@ -52,17 +66,17 @@ namespace Enemy
 
         private void FixedUpdate()
         {
-            Move3();
+            movement();
         }
 
-        private void Move3()
+        private void MoveWithShoot()
         {
             var dt = Time.fixedDeltaTime;
             switch (MoveAndShoot.State)
             {
                 case 0:
                     if (MoveAndShoot.IsInPosition(this.GetPosition()))
-                        Shoot2(dt);
+                        ShootTarget(dt);
                     else
                     {
                         var velocity = MoveAndShoot.MoveIn(this.GetPosition(), dt);
@@ -71,12 +85,12 @@ namespace Enemy
                     break;
                 case 1:
                     transform.eulerAngles = new Vector3(0,90,0);
-                    body.MovePosition(body.position + MoveAndShoot.Velocity() * dt);
+                    body.Move(MoveAndShoot.Velocity);
                     break;
             }
         }
 
-        private void Shoot2(float dt)
+        private void ShootTarget(float dt)
         {
             if (timer.IsTimeUp(dt, MoveAndShoot.StayTime))
             {
@@ -84,31 +98,30 @@ namespace Enemy
             }
             else
             {
-                if (!st.IsTimeUp(dt, MoveAndShoot.Shooting.FireRate))
+                if (!shootTimer.IsTimeUp(dt, MoveAndShoot.Shooting.FireRate))
                     return;
-                st.Reset();
-                transform.rotation = MoveAndShoot.FacePlayer(transform);
+                shootTimer.Reset();
+                transform.rotation = this.RotateTo(MoveAndShoot.Target);
                 transform.eulerAngles = -transform.eulerAngles;
+                
                 var bullet = Instantiate(MoveAndShoot.Shooting.Bullet);
                 bullet.GetComponent<DirectionBullet>().Target =
-                    MoveAndShoot.TargetPlayer;
+                    MoveAndShoot.Target;
                 bullet.SetPosition(this.GetPosition());
-                bullet.transform.rotation = transform.rotation;   
+                bullet.SetRotation(body.rotation);   
             }
         }
 
-        private void Move2()
+        private void LineMove()
         {
-            var velocity = Line.Direction * Line.MoveSpeed;
-            body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
+            body.Move(Line.Velocity);
         }
 
-        private void Move()
+        private void SinusMove()
         {
-            var dt = Time.fixedDeltaTime;
-            var velocity = 
-                new Vector3(-Movement.MoveSpeed, Movement.SinusMove(dt));
-            body.MovePosition(body.position + velocity * dt);
+            var velocity = new Vector3(
+                -Sinus.MoveSpeed, Sinus.SinusMove(Time.fixedDeltaTime));
+            body.Move(velocity);
         }
 
         private void OnTriggerEnter(Collider entity)

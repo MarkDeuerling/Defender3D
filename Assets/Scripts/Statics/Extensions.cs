@@ -25,9 +25,15 @@ namespace Statics
             return behaviour.transform.position;
         }
 
-        public static Vector3 GetPosition(this GameObject gameObject)
+        public static Vector3 GetPosition(this GameObject entity)
         {
-            return gameObject.transform.position;
+            return entity.transform.position;
+        }
+
+        public static void SetRotation(
+            this GameObject entity, Quaternion rotation)
+        {
+            entity.transform.rotation = rotation;
         }
 
         public static void SetPosition(this GameObject entity, Vector3 position)
@@ -49,6 +55,23 @@ namespace Statics
         public static bool Has(this Collider collider, string tag)
         {
             return collider.gameObject.CompareTag(tag);
+        }
+
+        public static Vector3 GetDirectionTo(
+            this MonoBehaviour behaviour, GameObject entity)
+        {
+            return (entity.GetPosition() - behaviour.GetPosition()).normalized;
+        }
+
+        public static Quaternion RotateTo(
+            this MonoBehaviour behaviour, GameObject entity)
+        {
+            return Quaternion.LookRotation(behaviour.GetDirectionTo(entity));
+        }
+
+        public static void Move(this Rigidbody body, Vector3 velocity)
+        {
+            body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
         }
     }
 }

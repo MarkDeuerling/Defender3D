@@ -3,7 +3,7 @@
 namespace Enemy
 {
     [System.Serializable]
-    public struct EnemyMovement
+    public struct SinusMovement
     {
         public float MoveSpeed;
         public float Amplitude;

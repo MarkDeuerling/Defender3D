@@ -8,7 +8,6 @@ namespace Projectiles
 	public class Special : MonoBehaviour {
 
 		public float MoveSpeed;
-		public Vector3 Direction;
 		public float DestroyTime = 5f;
 
 		private Rigidbody body;
@@ -31,15 +30,13 @@ namespace Projectiles
 		{
 			if (!Target)
 				return;
-			var targetPosition = Target.GetPosition() - this.GetPosition();
-			var direction = Quaternion.LookRotation(targetPosition);
-			transform.eulerAngles = direction.eulerAngles + Direction;
+			body.rotation = this.RotateTo(Target);
 		}
 
 		private void Move()
 		{
 			var velocity = transform.forward * MoveSpeed;
-			body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
+			body.Move(velocity);
 		}
 	}
 }
