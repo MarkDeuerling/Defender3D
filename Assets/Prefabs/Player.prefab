@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114918991864150074}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   SpecialAtk:
     Bullet: {fileID: 1266628165718882, guid: f9b82d6c9547f2d4ca74c973e1dfe667, type: 2}
     FireRate: 1
-    UseCount: 3
+    UseCount: 55
     Center: {x: 0, y: 0, z: 0}
     HitBox: {x: 10, y: 10, z: 10}
     colliders:
@@ -158,4 +158,4 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
   Health: 3
-  MoveSpeed: 20
+  MoveSpeed: 40

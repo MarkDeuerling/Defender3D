@@ -29,7 +29,7 @@ namespace Gui
 
         private void OnPlayerHealthUpdate(GameObject entity)
         {
-            var player = entity.GetComponent<Player.Player>();
+            var player = entity.GetPlayer();
             Health.text = player.Health.ToString();
         }
 

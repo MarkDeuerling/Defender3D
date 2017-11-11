@@ -130,5 +130,19 @@ MonoBehaviour:
   Movement:
     MoveSpeed: 2
     Amplitude: 10
+  Line:
+    MoveSpeed: 10
+    Direction: {x: 0, y: 0, z: 0}
+  MoveAndShoot:
+    MoveSpeed: 10
+    InPosition: {x: 2, y: 2, z: 0}
+    OutDirection: {x: 0, y: -1, z: 0}
+    ThreshHold: 1
+    StayTime: 5
+    Shooting:
+      Bullet: {fileID: 1654709377968640, guid: cec87b9a21ac22c4ca59111e1bb11f15, type: 2}
+      FireRate: 0.2
+      Offset: {x: 0, y: 0, z: 0}
+    TargetPlayer: {fileID: 0}
   Health: 5
-  LifeTime: 10
+  LifeTime: 100

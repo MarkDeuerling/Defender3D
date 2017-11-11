@@ -1,4 +1,6 @@
-﻿namespace Enemy
+﻿using UnityEngine;
+
+namespace Enemy
 {
     [System.Serializable]
     public struct EnemyMovement
@@ -10,7 +12,7 @@
         public float SinusMove(float dt)
         {
             elapsedTime += dt;
-            var sinusMove = UnityEngine.Mathf.Sin(MoveSpeed * elapsedTime);
+            var sinusMove = Mathf.Sin(MoveSpeed * elapsedTime);
             sinusMove *= Amplitude;
             return sinusMove;
         }

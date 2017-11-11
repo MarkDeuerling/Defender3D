@@ -8,12 +8,12 @@ namespace GameCamera
         public float ShakeAmount = 0.7f;
         public float DecreaseFactor = 1.0f;
 	
-        private Vector3 originalPos;
+        private Vector3 cachePosition;
         private float shakeDuration;
 
         private void Start()
         {
-            originalPos = this.GetPosition();
+            cachePosition = this.GetPosition();
             Game.Bind(Game.Hit, OnHit);
         }
 
@@ -32,12 +32,12 @@ namespace GameCamera
             if (shakeDuration > 0)
                 Shake();
             else
-                transform.position = originalPos;
+                this.SetPosition(cachePosition);
         }
 
         private void Shake()
         {
-            transform.position = originalPos + Random.insideUnitSphere * ShakeAmount;
+            transform.position = cachePosition + Random.insideUnitSphere * ShakeAmount;
             shakeDuration -= Time.deltaTime * DecreaseFactor;
         }
 

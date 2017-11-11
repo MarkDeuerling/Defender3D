@@ -154,6 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartScenes:
   - Camera
-  - Level_1
   - GUI
   - Player
+  - Level_1
