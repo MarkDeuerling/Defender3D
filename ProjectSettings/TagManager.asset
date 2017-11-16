@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Game
   - Special
+  - HPUP
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - 
   - Hitable
-  - 
+  - Player
   - 
   - 
   - 

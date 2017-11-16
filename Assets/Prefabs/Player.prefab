@@ -135,7 +135,7 @@ MonoBehaviour:
     FireRate: 1
     UseCount: 55
     Center: {x: 0, y: 0, z: 0}
-    HitBox: {x: 10, y: 10, z: 10}
+    HitBox: {x: 20, y: 20, z: 20}
     colliders:
     - {fileID: 0}
     - {fileID: 0}
@@ -158,4 +158,4 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
   Health: 3
-  MoveSpeed: 40
+  MoveSpeed: 30

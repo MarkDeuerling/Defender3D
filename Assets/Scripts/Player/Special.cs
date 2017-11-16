@@ -9,7 +9,7 @@ namespace Player
     {
         public GameObject Bullet;
         public float FireRate;
-        public float UseCount;
+        public int UseCount;
         public Vector3 Center;
         public Vector3 HitBox;
         public Collider[] colliders;

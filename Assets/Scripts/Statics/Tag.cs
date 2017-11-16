@@ -7,5 +7,7 @@
         public const string Special = "Special";
         public const string Player = "Player";
         public const string Hitable = "Hitable";
+        public const string HPUP = "HPUP";
+        public const string SPUP = "SPUP";
     }
 }

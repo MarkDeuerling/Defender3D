@@ -88,19 +88,39 @@ namespace Player
 
         private void OnTriggerEnter(Collider entity)
         {
+            HealthPowerUp(entity);
+            SpecialPowerUp(entity);
             if (entity.HasNot(Tag.Enemy))
                 return;
             Health--;
             Destroy(entity.gameObject);
-            HealthCondition();
+            IsDead();
             Game.Execute(Game.PlayerHealthUpdate, gameObject);
             Game.Execute(Game.Hit, gameObject);
         }
 
-        private void HealthCondition()
+        private void IsDead()
         {
             if (Health <= 0)
                 Game.LoadScene(Game.GameOver);
+        }
+
+        private void HealthPowerUp(Collider entity)
+        {
+            if (entity.HasNot(Tag.HPUP))
+                return;
+            Destroy(entity.gameObject);
+            Health++;
+            Game.Execute(Game.PlayerHealthUpdate, gameObject);
+        }
+
+        private void SpecialPowerUp(Collider entity)
+        {
+            if (entity.HasNot(Tag.SPUP))
+                return;
+            Destroy(entity.gameObject);
+            SpecialAtk.UseCount++;
+            Game.Execute(Game.SpecialUpdate, gameObject);
         }
     }
 }

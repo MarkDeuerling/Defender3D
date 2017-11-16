@@ -1,4 +1,5 @@
-﻿using Directives;
+﻿using System;
+using Directives;
 using Projectiles;
 using Statics;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace Enemy
         public int Health = 1;
         public float LifeTime = 10;
         public Pattern Patter;
+        public GameObject HealthPowerUp;
+        public GameObject SpecialPowerUp;
 
         private delegate void Movement();
 
@@ -28,8 +31,11 @@ namespace Enemy
         {
             body = this.GetRigidBody();
             Destroy(gameObject, LifeTime);
-            if (Patter == Pattern.MoveAndShoot)
-                FindPlayer();
+            ChoosePattern();   
+        }
+
+        private void ChoosePattern()
+        {
             switch (Patter)
             {
                 case Pattern.Sinus:
@@ -40,10 +46,13 @@ namespace Enemy
                     break;
                 case Pattern.MoveAndShoot:
                     movement = MoveWithShoot;
+                    FindPlayer();
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
-
+        
         private void FindPlayer()
         {
             MoveAndShoot.Target = Game.Player;
@@ -153,6 +162,8 @@ namespace Enemy
             if (Health > 0)
                 return;
             Game.Execute(Game.ScoreUpdate, gameObject);
+            Instantiate(HealthPowerUp).SetPosition(this.GetPosition());
+//            Instantiate(SpecialPowerUp).SetPosition(this.GetPosition());
             Destroy(gameObject);
         }
     }
