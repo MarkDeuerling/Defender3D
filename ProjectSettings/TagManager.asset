@@ -9,6 +9,7 @@ TagManager:
   - Game
   - Special
   - HPUP
+  - SPUP
   layers:
   - Default
   - TransparentFX

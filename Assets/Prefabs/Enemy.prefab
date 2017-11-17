@@ -146,4 +146,7 @@ MonoBehaviour:
     Target: {fileID: 0}
   Health: 5
   LifeTime: 10
-  Patter: 2
+  Patter: 0
+  HealthPowerUp: {fileID: 1026613582404864, guid: 3cf5ff5c16af6254196b66b2920e999e,
+    type: 2}
+  SpecialPowerUp: {fileID: 0}
