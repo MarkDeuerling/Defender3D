@@ -20,6 +20,7 @@ ModelImporter:
     100024: pCube4
     100026: group3
     100028: pCube5
+    100030: group4
     400000: //RootNode
     400002: group1
     400004: group2
@@ -35,6 +36,7 @@ ModelImporter:
     400024: pCube4
     400026: group3
     400028: pCube5
+    400030: group4
     2300000: pCube1
     2300002: pCube2
     2300004: pCube3
@@ -61,6 +63,46 @@ ModelImporter:
     7400004: Arms
     9500000: //RootNode
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn_boss_cover
+    second: {fileID: 2100000, guid: 5cb677e7a77589f4982789e1d5cf2a3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn_boss_eye
+    second: {fileID: 2100000, guid: 3021680b5c7d6964ab51652408355827, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn_boss_head
+    second: {fileID: 2100000, guid: 6980fc7337e9ea44db075e647229c4be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn_boss_mouth
+    second: {fileID: 2100000, guid: f1baba90fdaed314782751f1865e2560, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn_boss_shoulders
+    second: {fileID: 2100000, guid: 2832def4b3f5bbb47ae278f03f812943, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn_boss_teeth
+    second: {fileID: 2100000, guid: 3215a60cbffe0784d81a7ddc388b848f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn_shoulder_spikes
+    second: {fileID: 2100000, guid: 579677225b23f80428a27b34d8f988e3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: boss_arms
+    second: {fileID: 2100000, guid: 4ec2feb776082bc4aa2fccdcc8abb69b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
