@@ -131,7 +131,7 @@ MonoBehaviour:
     FireRate: 0.2
     Offset: {x: 2, y: 0, z: 0}
   SpecialAtk:
-    Bullet: {fileID: 1266628165718882, guid: f9b82d6c9547f2d4ca74c973e1dfe667, type: 2}
+    Bullet: {fileID: 1145433240200232, guid: 9dec452cac5834a4a83197b6c090a959, type: 2}
     FireRate: 1
     UseCount: 3
     Center: {x: 0, y: 0, z: 0}
