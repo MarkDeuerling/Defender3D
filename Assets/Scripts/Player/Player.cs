@@ -73,6 +73,7 @@ namespace Player
         private void Move()
         {
             var velocity = Game.CurrentState.Move;
+            velocity.Normalize();
             velocity *= MoveSpeed;
             var position = body.position + velocity * Time.fixedDeltaTime;
             body.MovePosition(Clamp(position));
