@@ -158,4 +158,4 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
   Health: 3
-  MoveSpeed: 30
+  MoveSpeed: 20
