@@ -131,7 +131,7 @@ MonoBehaviour:
     FireRate: 0.2
     Offset: {x: 2, y: 0, z: 0}
   SpecialAtk:
-    Bullet: {fileID: 1145433240200232, guid: 9dec452cac5834a4a83197b6c090a959, type: 2}
+    Bullet: {fileID: 1394599980504734, guid: 9dec452cac5834a4a83197b6c090a959, type: 2}
     FireRate: 1
     UseCount: 3
     Center: {x: 0, y: 0, z: 0}
@@ -159,3 +159,6 @@ MonoBehaviour:
     - {fileID: 0}
   Health: 3
   MoveSpeed: 20
+  ExplosionPref: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+    type: 2}
+  HitPref: {fileID: 1000011945391522, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e, type: 2}

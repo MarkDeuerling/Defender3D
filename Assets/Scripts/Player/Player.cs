@@ -13,6 +13,8 @@ namespace Player
         public Special SpecialAtk;
         public int Health = 1;
         public float MoveSpeed = 10;
+        public GameObject ExplosionPref;
+        public GameObject HitPref;
         
         private Rigidbody body;
         private Timer timer = new Timer();
@@ -92,6 +94,7 @@ namespace Player
             SpecialPowerUp(entity);
             if (entity.HasNot(Tag.Enemy))
                 return;
+            Spawn(HitPref, 0.3f);
             Health--;
             Destroy(entity.gameObject);
             IsDead();
@@ -101,8 +104,10 @@ namespace Player
 
         private void IsDead()
         {
-            if (Health <= 0)
-                Game.LoadScene(Game.GameOver);
+            if (Health > 0)
+                return;
+            Spawn(ExplosionPref, 1.2f);
+            Game.LoadScene(Game.GameOver);
         }
 
         private void HealthPowerUp(Collider entity)
@@ -121,6 +126,14 @@ namespace Player
             Destroy(entity.gameObject);
             SpecialAtk.UseCount++;
             Game.Execute(Game.SpecialUpdate, gameObject);
+        }
+
+        private void Spawn(GameObject prefab, float destroy)
+        {
+            var spawnedPref = Instantiate(prefab);
+            spawnedPref.SetPosition(this.GetPosition());
+            spawnedPref.SetRotation(Quaternion.identity);
+            Destroy(spawnedPref, destroy);
         }
     }
 }
