@@ -3,12 +3,17 @@ using UnityEngine.SceneManagement;
 
 namespace Gui
 {
-    public class Restart : MonoBehaviour
+    public class Gameover : MonoBehaviour
     {
         private const string Game = "Game";
         public void OnRestart()
         {
             SceneManager.LoadScene(Game);
+        }
+
+        public void OnClose()
+        {
+            Application.Quit();
         }
 
         private void Update()
