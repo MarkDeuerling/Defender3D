@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33567505372735840}
   - component: {fileID: 23561997829752678}
   - component: {fileID: 65154686372559634}
+  - component: {fileID: 114877348328697438}
   m_Layer: 0
   m_Name: HealthPowerUp
   m_TagString: HPUP
@@ -96,3 +97,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: -0.5, y: 0.5, z: -0.5}
+--- !u!114 &114877348328697438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1026613582404864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d9bbdcfc4794e4397cd32436ecc5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: -5
+  DestroyTime: 10

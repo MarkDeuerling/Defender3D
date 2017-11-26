@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using GameState;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -80,9 +81,21 @@ public class Game : MonoBehaviour
         SceneManager.LoadScene(scene, LoadSceneMode.Additive);
     }
 
-    public static void UnLoadScene(string scene)
+    public static void UnloadScene(string scene)
     {
-        SceneManager.UnloadSceneAsync(scene);
+        game.Unload(scene);
+    }
+
+    private void Unload(string scene)
+    {
+        StartCoroutine(UnloadAsync(scene));
+    }
+
+    private static IEnumerator UnloadAsync(string scene)
+    {
+        var async = SceneManager.UnloadSceneAsync(scene);
+        if (!async.isDone)
+            yield return null;
     }
 
     public static void LoadScene(string scene)

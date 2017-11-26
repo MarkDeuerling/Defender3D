@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Level
 {
@@ -7,7 +6,6 @@ namespace Level
     {
         public string CurrentScene;
         public string NextScene;
-        public bool IsBossLevel;
         public int SpawnCount;
 
         private void Start()
@@ -22,24 +20,15 @@ namespace Level
 
         private void ChangeLevel(GameObject entity)
         {
-            SpawnCount--;
-            if (SpawnCount > 0)
+            if (--SpawnCount > 0)
                 return;
-            if (IsBossLevel)
-                LoadEndScene();
-            else
-                LoadScene();
+            LoadScene();
         }
 
         private void LoadScene()
         {
             Game.AddScene(NextScene);
-            Game.UnLoadScene(CurrentScene);
-        }
-
-        private void LoadEndScene()
-        {
-            Game.LoadScene(NextScene);
+            Game.UnloadScene(CurrentScene);
         }
     }
 }

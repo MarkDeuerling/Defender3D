@@ -8,7 +8,7 @@ namespace Gui
         public void OnResume()
         {
             Time.timeScale = 1f;
-            Game.UnLoadScene(Game.Pause);
+            Game.UnloadScene(Game.Pause);
             Game.CurrentState = new PlayerState();
         }
 

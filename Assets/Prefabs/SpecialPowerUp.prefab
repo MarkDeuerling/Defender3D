@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33073335585558172}
   - component: {fileID: 23574843684283162}
   - component: {fileID: 65484251057027142}
+  - component: {fileID: 114340852438487110}
   m_Layer: 0
   m_Name: SpecialPowerUp
   m_TagString: SPUP
@@ -97,3 +98,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1393139, y: 1.9655647, z: 1.0835522}
   m_Center: {x: 0.000000029802322, y: -1.7482738, z: -0.000000059604645}
+--- !u!114 &114340852438487110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517856606050464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17d9bbdcfc4794e4397cd32436ecc5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: -5
+  DestroyTime: 10

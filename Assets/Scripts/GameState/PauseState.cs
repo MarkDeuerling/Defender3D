@@ -12,7 +12,7 @@ namespace GameState
         {
             if (!Input.GetKeyDown(KeyCode.P))
                 return;
-            Game.UnLoadScene(Game.Pause);
+            Game.UnloadScene(Game.Pause);
             Time.timeScale = 1;
             Game.CurrentState = new PlayerState();
         }
