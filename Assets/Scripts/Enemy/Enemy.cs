@@ -172,7 +172,7 @@ namespace Enemy
             switch (random)
             {
                 case 0:
-                    Instantiate(SpecialPowerUp).SetPosition(this.GetPosition());
+                    Instantiate(HealthPowerUp).SetPosition(this.GetPosition());
                     break;
                 case 1:
                     Instantiate(SpecialPowerUp).SetPosition(this.GetPosition());
