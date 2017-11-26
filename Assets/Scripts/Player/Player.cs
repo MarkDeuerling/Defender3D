@@ -78,7 +78,7 @@ namespace Player
             body.MovePosition(Clamp(position));
         }
 
-        private static Vector3 Clamp(Vector3 position)
+        private static Vector2 Clamp(Vector3 position)
         {
             position = Camera.main.WorldToViewportPoint(position);
             position.x = Mathf.Clamp01(position.x);
