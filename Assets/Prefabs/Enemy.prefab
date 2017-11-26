@@ -151,3 +151,4 @@ MonoBehaviour:
     type: 2}
   SpecialPowerUp: {fileID: 1816379181610678, guid: 5524bd75fee38ba4abfdf34cde11655a,
     type: 2}
+  DropChance: 2

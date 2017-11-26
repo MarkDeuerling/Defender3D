@@ -55,7 +55,6 @@ namespace Player
 
         private void SpecialShoot()
         {
-            
             if (SpecialAtk.UseCount < 1)
                 return;
             if (!specialTimer.IsTimeUp(Time.fixedDeltaTime, SpecialAtk.FireRate))

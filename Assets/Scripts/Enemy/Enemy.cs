@@ -1,5 +1,4 @@
-﻿using System;
-using Directives;
+﻿using Directives;
 using Projectiles;
 using Statics;
 using UnityEngine;
@@ -19,6 +18,7 @@ namespace Enemy
         public Pattern Patter;
         public GameObject HealthPowerUp;
         public GameObject SpecialPowerUp;
+        public int DropChance = 3;
 
         private delegate void Movement();
 
@@ -49,7 +49,7 @@ namespace Enemy
                     FindPlayer();
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    throw new System.ArgumentOutOfRangeException();
             }
         }
         
@@ -162,9 +162,22 @@ namespace Enemy
             if (Health > 0)
                 return;
             Game.Execute(Game.ScoreUpdate, gameObject);
-            Instantiate(HealthPowerUp).SetPosition(this.GetPosition());
-//            Instantiate(SpecialPowerUp).SetPosition(this.GetPosition());
+            Drop();
             Destroy(gameObject);
+        }
+
+        private void Drop()
+        {
+            var random = Random.Range(0, DropChance);
+            switch (random)
+            {
+                case 0:
+                    Instantiate(SpecialPowerUp).SetPosition(this.GetPosition());
+                    break;
+                case 1:
+                    Instantiate(SpecialPowerUp).SetPosition(this.GetPosition());
+                    break;
+            }
         }
     }
 }

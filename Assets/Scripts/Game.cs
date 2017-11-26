@@ -14,11 +14,11 @@ public class Game : MonoBehaviour
     public const string Hit = "Hit";
     public const string Pause = "Pause";
     public const string GameOver = "GameOver";
+    public const string ChangeLevel = "ChangeLevel";
     
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
     private static Game game;
-    
     public static GameObject Player { get; private set; }
         
     public static IGameState CurrentState
@@ -46,12 +46,23 @@ public class Game : MonoBehaviour
             .AddEvent(ScoreUpdate)
             .AddEvent(Hit)
             .AddEvent(SpecialUpdate)
-            .AddEvent(PlayerBind);
+            .AddEvent(PlayerBind)
+            .AddEvent(ChangeLevel);
     }
 
     private static void BindPlayer()
     {
         Bind(PlayerBind, OnPlayerBind);
+    }
+    
+    private void OnDestroy()
+    {
+        UnBindPlayer();
+    }
+
+    private static void UnBindPlayer()
+    {
+        Unbind(PlayerBind, OnPlayerBind);
     }
     
     private static void OnPlayerBind(GameObject entity)

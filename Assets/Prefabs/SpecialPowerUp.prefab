@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4175124708700860}
   - component: {fileID: 33466303005101130}
   - component: {fileID: 23516541559728892}
-  - component: {fileID: 95046145312822412}
+  - component: {fileID: 65344235666144156}
   m_Layer: 0
   m_Name: SpecialPowerUp
   m_TagString: SPUP
@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1816379181610678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 572722737886fc9409a0a6b8139aceac, type: 2}
-  - {fileID: 2100000, guid: 3599b8c4177194442930d0f41f58bd69, type: 2}
+  - {fileID: 2100000, guid: 12c73185544f03544a0180ca4d8e9097, type: 2}
   - {fileID: 2100000, guid: 12c73185544f03544a0180ca4d8e9097, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -85,20 +85,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816379181610678}
   m_Mesh: {fileID: 4300000, guid: adb0ed5872472df439802f0268c8281c, type: 3}
---- !u!95 &95046145312822412
-Animator:
-  serializedVersion: 3
+--- !u!65 &65344235666144156
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1816379181610678}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: adb0ed5872472df439802f0268c8281c, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 2
+  m_Size: {x: 0.022034198, y: 0.03801374, z: 0.018520907}
+  m_Center: {x: 0, y: 0.0008066222, z: 0.0012174323}
