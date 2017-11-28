@@ -8,7 +8,7 @@ namespace Level
     {
         public GameObject Enemy;
         public int Count;
-        public int SpawnRate;
+        public float SpawnRate;
         public float StartSpawn;
 
         private Timer timer;

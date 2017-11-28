@@ -14,8 +14,7 @@ namespace Editor
         [MenuItem("Scenes/Environment %e")]
         private static void OpenEnvironment()
         {
-            EditorSceneManager.OpenScene("Assets/Scenes/Game.unity");
-            EditorSceneManager.OpenScene("Assets/Scenes/Player.unity", OpenSceneMode.Additive);
+            EditorSceneManager.OpenScene("Assets/Scenes/Player.unity");
             EditorSceneManager.OpenScene("Assets/Scenes/Environment.unity", OpenSceneMode.Additive);
             EditorSceneManager.OpenScene("Assets/Scenes/Camera.unity", OpenSceneMode.Additive);
         }
