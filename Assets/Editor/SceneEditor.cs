@@ -18,5 +18,23 @@ namespace Editor
             EditorSceneManager.OpenScene("Assets/Scenes/Environment.unity", OpenSceneMode.Additive);
             EditorSceneManager.OpenScene("Assets/Scenes/Camera.unity", OpenSceneMode.Additive);
         }
+
+        [MenuItem("Scenes/Wave1 %i")]
+        private static void OpenWave1()
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/Wave1.unity", OpenSceneMode.Additive);
+        }
+        
+        [MenuItem("Scenes/Wave2 %o")]
+        private static void OpenWave2()
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/Wave2.unity", OpenSceneMode.Additive);
+        }
+        
+        [MenuItem("Scenes/Wave3 %p")]
+        private static void OpenWave3()
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/Wave3.unity", OpenSceneMode.Additive);
+        }
     }
 }

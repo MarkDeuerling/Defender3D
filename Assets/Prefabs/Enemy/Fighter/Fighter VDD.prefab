@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65406120582145460}
   - component: {fileID: 114680140176969698}
   m_Layer: 8
-  m_Name: Fighter Vertical Up
+  m_Name: Fighter VDD
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1144129294581760}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: -0.27059805, y: -0.6532815, z: -0.27059805, w: 0.6532815}
   m_LocalPosition: {x: 8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -45, y: -90, z: 0}
 --- !u!23 &23707795762501476
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 713f8d12f5dbfb640b7a4874212c2c08, type: 2}
+  - {fileID: 2100000, guid: f1baba90fdaed314782751f1865e2560, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -125,14 +125,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shooting:
     Bullet: {fileID: 1474771026728934, guid: 48de4355f8bf77545bb73a0b9cd3981b, type: 2}
-    FireRate: 0.5
+    FireRate: 5
     Offset: {x: 0, y: 0, z: 0}
   Sinus:
     MoveSpeed: 2
     Amplitude: 10
   Line:
     MoveSpeed: 20
-    Direction: {x: 0, y: -1, z: 0}
+    Direction: {x: -1, y: 1, z: 0}
   MoveAndShoot:
     MoveSpeed: 10
     InPosition: {x: 18, y: 7, z: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
       FireRate: 0.2
       Offset: {x: 0, y: 0, z: 0}
     Target: {fileID: 0}
-  Health: 1
+  Health: 3
   LifeTime: 5
   Patter: 1
   HealthPowerUp: {fileID: 1026613582404864, guid: 3cf5ff5c16af6254196b66b2920e999e,

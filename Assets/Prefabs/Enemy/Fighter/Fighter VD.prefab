@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1862118104698432}
+  m_RootGameObject: {fileID: 1144129294581760}
   m_IsPrefabParent: 1
---- !u!1 &1862118104698432
+--- !u!1 &1144129294581760
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4851141679491138}
-  - component: {fileID: 33143598721107968}
-  - component: {fileID: 23427998523612488}
-  - component: {fileID: 54840682691531130}
-  - component: {fileID: 65453890747812842}
-  - component: {fileID: 114918991864150074}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
+  - component: {fileID: 4774095070619676}
+  - component: {fileID: 33967766490179644}
+  - component: {fileID: 23707795762501476}
+  - component: {fileID: 54665213481205450}
+  - component: {fileID: 65406120582145460}
+  - component: {fileID: 114680140176969698}
+  m_Layer: 8
+  m_Name: Fighter VD
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4851141679491138
+--- !u!4 &4774095070619676
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1862118104698432}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -8, y: 0, z: 0}
+  m_GameObject: {fileID: 1144129294581760}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!23 &23427998523612488
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!23 &23707795762501476
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1862118104698432}
+  m_GameObject: {fileID: 1144129294581760}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,10 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5067ed7eb51713b4689fa979b8da8e08, type: 2}
-  - {fileID: 2100000, guid: 84a8c42be7c2066469d3e203d25d8805, type: 2}
-  - {fileID: 2100000, guid: 572722737886fc9409a0a6b8139aceac, type: 2}
-  - {fileID: 2100000, guid: 7e4e8095d69c3fa49a4ceaa305e483a4, type: 2}
+  - {fileID: 2100000, guid: f1baba90fdaed314782751f1865e2560, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -69,7 +66,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
+  m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -81,19 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33143598721107968
+--- !u!33 &33967766490179644
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1862118104698432}
-  m_Mesh: {fileID: 4300000, guid: 75c051681884f744baed8620d8959725, type: 3}
---- !u!54 &54840682691531130
+  m_GameObject: {fileID: 1144129294581760}
+  m_Mesh: {fileID: 4300000, guid: 7e828c63d2dcda149b73258e37d7a9e2, type: 3}
+--- !u!54 &54665213481205450
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1862118104698432}
+  m_GameObject: {fileID: 1144129294581760}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -103,62 +100,58 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65453890747812842
+--- !u!65 &65406120582145460
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1862118104698432}
+  m_GameObject: {fileID: 1144129294581760}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4.5474596, y: 1.2131755, z: 3.7819142}
-  m_Center: {x: 0.097498894, y: 0.14367579, z: 0.003359735}
---- !u!114 &114918991864150074
+  m_Size: {x: 1.9510616, y: 1.7410018, z: 2.557889}
+  m_Center: {x: 0, y: -0.000000029802322, z: 0}
+--- !u!114 &114680140176969698
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1862118104698432}
+  m_GameObject: {fileID: 1144129294581760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a89afe16ae6d3d4e936671b73fa76ff, type: 3}
+  m_Script: {fileID: 11500000, guid: bc94d8ca955ca444fb397e779f5d71ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Shooting:
-    Bullet: {fileID: 1609548733927138, guid: 5899a1a9cf491f341af97b6674758b23, type: 2}
-    FireRate: 0.05
-    Offset: {x: 2, y: 0, z: 0}
-  SpecialAtk:
-    Bullet: {fileID: 1394599980504734, guid: 9dec452cac5834a4a83197b6c090a959, type: 2}
-    FireRate: 1
-    UseCount: 3
-    Center: {x: 0, y: 0, z: 0}
-    HitBox: {x: 20, y: 20, z: 20}
-    colliders:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    Bullet: {fileID: 1474771026728934, guid: 48de4355f8bf77545bb73a0b9cd3981b, type: 2}
+    FireRate: 0.5
+    Offset: {x: 0, y: 0, z: 0}
+  Sinus:
+    MoveSpeed: 2
+    Amplitude: 10
+  Line:
+    MoveSpeed: 20
+    Direction: {x: 0, y: 1, z: 0}
+  MoveAndShoot:
+    MoveSpeed: 10
+    InPosition: {x: 18, y: 7, z: 0}
+    OutDirection: {x: 1, y: 0, z: 0}
+    ThreshHold: 1
+    StayTime: 5
+    Shooting:
+      Bullet: {fileID: 1654709377968640, guid: cec87b9a21ac22c4ca59111e1bb11f15, type: 2}
+      FireRate: 0.2
+      Offset: {x: 0, y: 0, z: 0}
+    Target: {fileID: 0}
   Health: 3
-  MoveSpeed: 25
-  ExplosionPref: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b,
+  LifeTime: 5
+  Patter: 1
+  HealthPowerUp: {fileID: 1026613582404864, guid: 3cf5ff5c16af6254196b66b2920e999e,
+    type: 2}
+  SpecialPowerUp: {fileID: 1517856606050464, guid: 5524bd75fee38ba4abfdf34cde11655a,
+    type: 2}
+  DropChance: 6
+  ExplosionPref: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
     type: 2}
   HitPref: {fileID: 1000011945391522, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e, type: 2}
