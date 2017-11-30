@@ -19,19 +19,19 @@ namespace Editor
             EditorSceneManager.OpenScene("Assets/Scenes/Camera.unity", OpenSceneMode.Additive);
         }
 
-        [MenuItem("Scenes/Wave1 %i")]
+        [MenuItem("Scenes/Wave1")]
         private static void OpenWave1()
         {
             EditorSceneManager.OpenScene("Assets/Scenes/Wave1.unity", OpenSceneMode.Additive);
         }
         
-        [MenuItem("Scenes/Wave2 %o")]
+        [MenuItem("Scenes/Wave2")]
         private static void OpenWave2()
         {
             EditorSceneManager.OpenScene("Assets/Scenes/Wave2.unity", OpenSceneMode.Additive);
         }
         
-        [MenuItem("Scenes/Wave3 %p")]
+        [MenuItem("Scenes/Wave3")]
         private static void OpenWave3()
         {
             EditorSceneManager.OpenScene("Assets/Scenes/Wave3.unity", OpenSceneMode.Additive);
