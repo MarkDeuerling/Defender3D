@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentScene: Wave3
-  NextScene: Boss
+  NextScene: BossLevel
+  SpawnCount: 0
 --- !u!4 &587822381
 Transform:
   m_ObjectHideFlags: 0

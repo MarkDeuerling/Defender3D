@@ -7,6 +7,7 @@ namespace GameState
         private const string Horizontal = "Horizontal";
         private const string Vertical = "Vertical";
         private const string Fire = "Fire1";
+        private const string Fire2 = "Fire2";
 
         public Vector3 Move
         {
@@ -18,7 +19,7 @@ namespace GameState
         }
         
         public bool Shoot { get { return Input.GetButton(Fire); } }
-        public bool Special { get { return Input.GetKey(KeyCode.K); } }
+        public bool Special { get { return Input.GetButton(Fire2); } }
 
         public void Update()
         {

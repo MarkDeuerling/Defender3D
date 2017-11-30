@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentScene: Wave2
   NextScene: Wave3
-  SpawnCount: 2
+  SpawnCount: 4
 --- !u!4 &669632197
 Transform:
   m_ObjectHideFlags: 0
