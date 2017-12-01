@@ -144,7 +144,7 @@ MonoBehaviour:
       FireRate: 0.2
       Offset: {x: 0, y: 0, z: 0}
     Target: {fileID: 0}
-  Health: 3
+  Health: 1
   LifeTime: 5
   Patter: 1
   HealthPowerUp: {fileID: 1026613582404864, guid: 3cf5ff5c16af6254196b66b2920e999e,
