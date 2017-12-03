@@ -7,7 +7,7 @@ namespace GameState
         private const string Horizontal = "Horizontal";
         private const string Vertical = "Vertical";
         private const string Fire = "Fire1";
-        private const string Fire2 = "Fire2";
+        private const string Fire2 = "Jump";
 
         public Vector3 Move
         {
