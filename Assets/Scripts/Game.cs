@@ -16,6 +16,7 @@ public class Game : MonoBehaviour
     public const string Pause = "Pause";
     public const string GameOver = "GameOver";
     public const string ChangeLevel = "ChangeLevel";
+    public const string DestroyEnemy = "DestroyEnemy";
     
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
@@ -48,7 +49,8 @@ public class Game : MonoBehaviour
             .AddEvent(Hit)
             .AddEvent(SpecialUpdate)
             .AddEvent(PlayerBind)
-            .AddEvent(ChangeLevel);
+            .AddEvent(ChangeLevel)
+            .AddEvent(DestroyEnemy);
     }
 
     private static void BindPlayer()

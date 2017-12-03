@@ -167,6 +167,7 @@ namespace Enemy
                 return;
             Spawn(ExplosionPref, 1.2f);
             Game.Execute(Game.ScoreUpdate, gameObject);
+            Game.Execute(Game.DestroyEnemy, gameObject);
             Drop();
             Destroy(gameObject);
         }

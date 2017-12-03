@@ -36,5 +36,11 @@ namespace Editor
         {
             EditorSceneManager.OpenScene("Assets/Scenes/Wave3.unity", OpenSceneMode.Additive);
         }
+        
+        [MenuItem("Scenes/Boss")]
+        private static void OpenBoss()
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/BossLevel.unity", OpenSceneMode.Additive);
+        }
     }
 }
