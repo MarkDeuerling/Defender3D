@@ -1,11 +1,18 @@
 fileFormatVersion: 2
 guid: bc94d8ca955ca444fb397e779f5d71ac
-timeCreated: 1509376349
+timeCreated: 1512515298
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - HealthPowerUp: {fileID: 1026613582404864, guid: 3cf5ff5c16af6254196b66b2920e999e,
+      type: 2}
+  - SpecialPowerUp: {fileID: 1818487631890252, guid: f6edd6b0d50ac6944b6617a005895918,
+      type: 2}
+  - ExplosionPref: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+      type: 2}
+  - HitPref: {fileID: 1000011945391522, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
