@@ -55,20 +55,15 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-<<<<<<< HEAD:Assets/Models/bullet.controller
     m_State: {fileID: 1102213234131936976}
     m_Position: {x: 345, y: 176, z: 0}
-=======
-    m_State: {fileID: 1102993231514618420}
-    m_Position: {x: 24, y: 192, z: 0}
->>>>>>> 12a61c74c22e0ad5ac5fea592078153653e10d4e:Assets/Models/Bullet_PickUp_Controller.controller
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 48, y: 108, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102213234131936976}
