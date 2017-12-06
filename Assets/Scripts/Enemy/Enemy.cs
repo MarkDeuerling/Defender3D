@@ -145,7 +145,7 @@ namespace Enemy
         {
             if (entity.HasNot(Tag.Bullet))
                 return;
-            Spawn(HitPref, 0.3f);
+            Spawn(HitPref, entity.gameObject, 0.3f);
             Health--;
             Destroy(entity.gameObject);
             HealthCondition();
@@ -155,7 +155,7 @@ namespace Enemy
         {
             if (entity.HasNot(Tag.Special))
                 return;
-            Spawn(HitPref, 0.3f);
+            Spawn(HitPref, entity.gameObject, 0.3f);
             Health = 0;
             Destroy(entity.gameObject);
             HealthCondition();
@@ -165,17 +165,18 @@ namespace Enemy
         {
             if (Health > 0)
                 return;
-            Spawn(ExplosionPref, 1.2f);
+            Spawn(ExplosionPref, gameObject, 1.2f);
             Game.Execute(Game.ScoreUpdate, gameObject);
             Game.Execute(Game.DestroyEnemy, gameObject);
             Drop();
             Destroy(gameObject);
         }
 
-        private void Spawn(GameObject prefab, float destroy)
+        private static void Spawn(
+            GameObject prefab, GameObject entity, float destroy)
         {
             var spawnedPref = Instantiate(prefab);
-            spawnedPref.SetPosition(this.GetPosition());
+            spawnedPref.SetPosition(entity.GetPosition());
             spawnedPref.SetRotation(Quaternion.identity);
             Destroy(spawnedPref, destroy);
         }
