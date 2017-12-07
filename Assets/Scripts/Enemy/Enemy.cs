@@ -180,6 +180,14 @@ namespace Enemy
             var spawnedPref = Instantiate(prefab);
             spawnedPref.SetPosition(entity.GetPosition());
             spawnedPref.SetRotation(Quaternion.identity);
+
+            // refactore QAD
+            var random = Random.Range(2, 7);
+            spawnedPref.transform.localScale = Vector3.one * random;
+            
+            var audioSource = spawnedPref.GetComponent<AudioSource>();
+            random = Random.Range(1, 3);
+            audioSource.pitch = random;
             Destroy(spawnedPref, destroy);
         }
         private void Drop()
