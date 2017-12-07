@@ -5,6 +5,11 @@ namespace Gui
 {
     public class Pause : MonoBehaviour
     {
+        public void OnRestart()
+        {
+            Game.LoadScene("Game");    
+        }
+        
         public void OnResume()
         {
             Time.timeScale = 1f;

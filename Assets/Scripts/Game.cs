@@ -42,7 +42,6 @@ public class Game : MonoBehaviour
         Setup();
         BindPlayer();
         BindHit();
-        
     }
 
     private void Setup()
