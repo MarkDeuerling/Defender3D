@@ -146,6 +146,7 @@ namespace Enemy
             if (entity.HasNot(Tag.Bullet))
                 return;
             Spawn(HitPref, entity.gameObject, 0.3f);
+            Game.Execute(Game.Hit, gameObject);
             Health--;
             Destroy(entity.gameObject);
             HealthCondition();
@@ -156,6 +157,7 @@ namespace Enemy
             if (entity.HasNot(Tag.Special))
                 return;
             Spawn(HitPref, entity.gameObject, 0.3f);
+            Game.Execute(Game.Hit, gameObject);
             Health = 0;
             Destroy(entity.gameObject);
             HealthCondition();

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Game : MonoBehaviour
 {
     public List<string> StartScenes;
+    public float TimeStop = 0.1f;
 
     public const string PlayerHealthUpdate = "PlayerHealthUpdate";
     public const string ScoreUpdate = "ScoreUpdate";
@@ -38,6 +39,7 @@ public class Game : MonoBehaviour
     {
         Setup();
         BindPlayer();
+        BindHit();
     }
 
     private void Setup()
@@ -56,6 +58,23 @@ public class Game : MonoBehaviour
     private static void BindPlayer()
     {
         Bind(PlayerBind, OnPlayerBind);
+    }
+
+    private void BindHit()
+    {
+        Bind(Hit, OnHit);
+    }
+
+    private void OnHit(GameObject entity)
+    {
+        StartCoroutine(StopTime());
+    }
+
+    private IEnumerator StopTime()
+    {
+        Time.timeScale = 0;
+        yield return new WaitForSecondsRealtime(TimeStop);
+        Time.timeScale = 1;
     }
     
     private void OnDestroy()

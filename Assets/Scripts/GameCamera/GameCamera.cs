@@ -16,7 +16,7 @@ namespace GameCamera
 
         private void Start()
         {
-            enemyShakeAmount = ShakeAmount * 0.2f;
+            enemyShakeAmount = ShakeAmount * 0.5f;
             cacheShakeAmount = ShakeAmount;
             cachePosition = this.GetPosition();
             Game.Bind(Game.Hit, OnHit);
@@ -42,7 +42,7 @@ namespace GameCamera
 
         private void Update()
         {
-            if (shakeDuration > 0)
+            if (shakeDuration > 0 && Time.timeScale >= 1)
                 Shake();
             else
                 this.SetPosition(cachePosition);

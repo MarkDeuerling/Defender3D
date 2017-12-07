@@ -158,3 +158,4 @@ MonoBehaviour:
   - Player
   - Wave1
   - Environment
+  TimeStop: 0.01
