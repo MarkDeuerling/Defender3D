@@ -33,6 +33,8 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         game = this;
+        Time.timeScale = 1;
+        Application.targetFrameRate = 60;
     }
 
     private void Start()
@@ -40,6 +42,7 @@ public class Game : MonoBehaviour
         Setup();
         BindPlayer();
         BindHit();
+        
     }
 
     private void Setup()
@@ -65,6 +68,11 @@ public class Game : MonoBehaviour
         Bind(Hit, OnHit);
     }
 
+    private void UnBindHit()
+    {
+        Unbind(Hit, OnHit);
+    }
+
     private void OnHit(GameObject entity)
     {
         StartCoroutine(StopTime());
@@ -80,6 +88,7 @@ public class Game : MonoBehaviour
     private void OnDestroy()
     {
         UnBindPlayer();
+        UnBindHit();
     }
 
     private static void UnBindPlayer()
@@ -104,7 +113,8 @@ public class Game : MonoBehaviour
 
     public static void UnloadScene(string scene)
     {
-        game.Unload(scene);
+        SceneManager.UnloadSceneAsync(scene);
+//        game.Unload(scene);
     }
 
     private void Unload(string scene)
