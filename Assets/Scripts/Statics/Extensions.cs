@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Projectiles;
+using UnityEngine;
 
 namespace Statics
 {
@@ -72,6 +73,11 @@ namespace Statics
         public static void Move(this Rigidbody body, Vector3 velocity)
         {
             body.MovePosition(body.position + velocity * Time.fixedDeltaTime);
+        }
+
+        public static Bullet GetBullet(this GameObject entity)
+        {
+            return entity.GetComponent<Bullet>();
         }
     }
 }

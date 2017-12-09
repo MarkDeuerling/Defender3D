@@ -1,0 +1,36 @@
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
+using Statics;
+using UnityEngine;
+
+namespace Projectiles
+{
+    [Serializable]
+    public class SpreadShoot
+    {
+        public GameObject BulletPref;
+        public float Spread;
+        public int Count;
+        public Vector3 Offset;
+
+        private const int Angle = 180;
+        
+        public void Shoot(GameObject entity)
+        {
+            for (var i = 0; i < Count; ++i)
+                SpreadBullet(entity, i);
+        }
+
+        private void SpreadBullet(GameObject entity, int i)
+        {
+            var bullet = GameObject.Instantiate(BulletPref);
+            bullet.SetPosition(entity.GetPosition() + Offset);
+            var mul = i % 2 == 0 ? i : -1 * i; 
+            var factor = Angle + Spread * mul;
+            var totalSpread = Vector3.right * factor;
+            bullet.transform.eulerAngles += totalSpread;
+            bullet.GetBullet().Direction = bullet.transform.forward;
+            MonoBehaviour.print(bullet.transform.forward);
+        }
+    }
+}

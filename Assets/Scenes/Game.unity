@@ -156,6 +156,6 @@ MonoBehaviour:
   - Camera
   - GUI
   - Player
-  - Wave1
+  - BossLevel
   - Environment
-  TimeStop: 0
+  TimeStop: 0.02
