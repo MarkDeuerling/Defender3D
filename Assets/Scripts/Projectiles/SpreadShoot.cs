@@ -12,6 +12,7 @@ namespace Projectiles
         public float Spread;
         public int Count;
         public Vector3 Offset;
+        public float ShootRate;
 
         private const int Angle = 180;
         
@@ -30,7 +31,6 @@ namespace Projectiles
             var totalSpread = Vector3.right * factor;
             bullet.transform.eulerAngles += totalSpread;
             bullet.GetBullet().Direction = bullet.transform.forward;
-            MonoBehaviour.print(bullet.transform.forward);
         }
     }
 }

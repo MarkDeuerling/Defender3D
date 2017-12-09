@@ -10,21 +10,42 @@ namespace Enemy.Boss
 		public MouthShoot MouthShoot;
 		public ArmShoot ArmShoot; 
 
-		public float Rate;
 		private Timer timer = new Timer();
 		private Timer mouthTimer = new Timer();
 		private Timer armTimer = new Timer();
-
-		private void Start()
-		{
-			mouthTimer.HotStart();
-		}
+		private bool isBullets;
+		private int count = 10;
 
 		private void Update()
 		{
-			ShootBullets();
-//			EyeShoot();
-//			MouthLaser();
+			RandomShoot();
+		}
+
+		private void RandomShoot()
+		{
+			if (count <= 0)
+				isBullets = false;
+			if (isBullets && count > 0)
+			{
+				ShootBullets();
+				count--;
+				
+				return;
+			}
+			count = 10;
+			var seed = Random.Range(0, 3);
+			switch (seed)
+			{
+				case 0:
+					MouthLaser();
+					break;
+				case 1:
+					EyeShoot();
+					break;
+				case 2:
+					isBullets = true;
+					break;
+			}
 		}
 
 		private void ShootBullets()
@@ -36,14 +57,14 @@ namespace Enemy.Boss
 		
 		private void MouthLaser()
 		{
-			if (!mouthTimer.IsTimeUp(Time.deltaTime, Rate)) return;
+			if (!mouthTimer.IsTimeUp(Time.deltaTime, MouthShoot.ShootRate)) return;
 			MouthShoot.Shoot(gameObject, this);
 			mouthTimer.Reset();
 		}
 
 		private void EyeShoot()
 		{
-			if (!timer.IsTimeUp(Time.deltaTime, 1f)) return;
+			if (!timer.IsTimeUp(Time.deltaTime, SpreadShoot.ShootRate)) return;
 			SpreadShoot.Shoot(gameObject);
 			timer.Reset();
 		}

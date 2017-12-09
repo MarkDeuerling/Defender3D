@@ -15,6 +15,7 @@ namespace Enemy.Boss
         public float MaxSize;
         public float SizeUp;
         public float SizeUpRate;
+        public float ShootRate;
 
         private VolumetricLineBehavior line;
 
