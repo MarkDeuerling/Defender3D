@@ -44,3 +44,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start.unity
     guid: 8661d3815afe07a43bf788df129711fc
+  - enabled: 1
+    path: Assets/Scenes/BossWave.unity
+    guid: 7101575094f10b443912d1b0ed4e98ef

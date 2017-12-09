@@ -19,6 +19,13 @@ namespace Enemy.Boss
 		private Timer armTimer = new Timer();
 		private bool isBullets;
 		private int count = 10;
+		private int maxHealth;
+		private bool spawnOnHalf = true;
+
+		private void Start()
+		{
+			maxHealth = Health;
+		}
 
 		private void OnTriggerEnter(Collider other)
 		{
@@ -31,6 +38,11 @@ namespace Enemy.Boss
 
 		private void HealthCondition(GameObject entity)
 		{
+			if (spawnOnHalf && Health <= maxHealth * 0.5f)
+			{
+				spawnOnHalf = false;
+				Game.AddScene("BossWave");
+			}
 			if (Health >= 0)
 				return;
 			Spawn(DiePref, entity, 3f);
