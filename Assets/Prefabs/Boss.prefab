@@ -102,9 +102,10 @@ GameObject:
   - component: {fileID: 4195226950586872}
   - component: {fileID: 95283297991003318}
   - component: {fileID: 114759840250211238}
+  - component: {fileID: 65795203290566124}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -780,6 +781,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347278480518660}
   m_Mesh: {fileID: 4300000, guid: c29e8cedc5e6a7e44bf322708c13e4cb, type: 3}
+--- !u!65 &65795203290566124
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1295639362658308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.613026, y: 11.640971, z: 8.266466}
+  m_Center: {x: -1.806509, y: 4.665319, z: -3.0011778}
 --- !u!95 &95283297991003318
 Animator:
   serializedVersion: 3
@@ -808,12 +821,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e65054eaefd2bb48a8d67a747a430c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Health: 100
+  HitPref: {fileID: 1000011945391522, guid: 78b71003e8b357d4bbf89c8b5e5e4f0e, type: 2}
+  DiePref: {fileID: 1000011797152326, guid: acf39d9f4addf294d93fa56fa373961b, type: 2}
   SpreadShoot:
     BulletPref: {fileID: 1474771026728934, guid: 41d006d3f9beb3c40a3933cd9d927177,
       type: 2}
     Spread: 10
     Count: 3
     Offset: {x: -4, y: 7, z: -8.92}
+    ShootRate: 0.5
   MouthShoot:
     Laser: {fileID: 1194530230798114, guid: 1b6b984b13246724f83baaa9af78940a, type: 2}
     Offset: {x: -6, y: 3, z: 0}
@@ -821,10 +838,9 @@ MonoBehaviour:
     MaxSize: 200
     SizeUp: 10
     SizeUpRate: 0.02
+    ShootRate: 1
   ArmShoot:
     BulletPref: {fileID: 1474771026728934, guid: ae9cc9e2b6869bd4cbdd494d3916ce06,
       type: 2}
     SpawnRate: 0.1
-    Count: 10
     Offset: {x: -1.53, y: -2.42, z: 0}
-  Rate: 8
