@@ -1,16 +1,19 @@
 ﻿using Directives;
+using Projectiles;
 using UnityEngine;
 
 namespace Enemy.Boss
 {
 	public class Boss : MonoBehaviour
 	{
-		public Projectiles.SpreadShoot SpreadShoot;
+		public SpreadShoot SpreadShoot;
 		public MouthShoot MouthShoot;
+		public ArmShoot ArmShoot; 
 
 		public float Rate;
 		private Timer timer = new Timer();
 		private Timer mouthTimer = new Timer();
+		private Timer armTimer = new Timer();
 
 		private void Start()
 		{
@@ -19,10 +22,18 @@ namespace Enemy.Boss
 
 		private void Update()
 		{
-//			ArmShoot();
-			MouthLaser();
+			ShootBullets();
+//			EyeShoot();
+//			MouthLaser();
 		}
 
+		private void ShootBullets()
+		{
+			if (!armTimer.IsTimeUp(Time.deltaTime, ArmShoot.SpawnRate)) return;
+			ArmShoot.Shoot(gameObject);
+			armTimer.Reset();
+		}
+		
 		private void MouthLaser()
 		{
 			if (!mouthTimer.IsTimeUp(Time.deltaTime, Rate)) return;
@@ -30,7 +41,7 @@ namespace Enemy.Boss
 			mouthTimer.Reset();
 		}
 
-		private void ArmShoot()
+		private void EyeShoot()
 		{
 			if (!timer.IsTimeUp(Time.deltaTime, 1f)) return;
 			SpreadShoot.Shoot(gameObject);

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65123531890789212}
   m_Layer: 0
   m_Name: Boss Great Laser
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ BoxCollider:
   m_GameObject: {fileID: 1194530230798114}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 15.01, y: 7.95, z: 55.00001}
   m_Center: {x: 0, y: 0, z: 27.500006}
