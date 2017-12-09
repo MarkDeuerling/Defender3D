@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 23103960381906158}
   - component: {fileID: 33266802302774036}
   - component: {fileID: 114876461729663828}
+  - component: {fileID: 65123531890789212}
   m_Layer: 0
   m_Name: Boss Great Laser
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194530230798114}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -18.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,6 +84,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1194530230798114}
   m_Mesh: {fileID: 0}
+--- !u!65 &65123531890789212
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1194530230798114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 15.01, y: 7.95, z: 55.00001}
+  m_Center: {x: 0, y: 0, z: 27.500006}
 --- !u!114 &114876461729663828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -94,10 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0884dceb0d4308c4eb8bc763c8f8deae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_templateMaterial: {fileID: 2100000, guid: 974b33ccbd786464a825203eb88b8dab, type: 2}
+  m_templateMaterial: {fileID: 2100000, guid: f68f8c3a3d76fb74cbb880d372c81620, type: 2}
   m_doNotOverwriteTemplateMaterialProperties: 0
   m_startPos: {x: 0, y: 0, z: 0}
   m_endPos: {x: 0, y: 0, z: 55}
   m_lineColor: {r: 1, g: 0, b: 0.06206894, a: 1}
-  m_lineWidth: 11.42
-  m_lightSaberFactor: 0.63
+  m_lineWidth: 2
+  m_lightSaberFactor: 0.62
