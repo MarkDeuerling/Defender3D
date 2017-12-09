@@ -1,39 +1,46 @@
 fileFormatVersion: 2
-guid: 5eff2d716bfacaa448314bdc6c05d7d1
-timeCreated: 1510263493
+guid: 8956a387ef103ee4d9a2ffea9b3c48b4
+timeCreated: 1512816971
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube1
-    4300002: Cruiser
-    7400000: Cruiser_Roll
+    100000: tower_barrel
+    100002: tower_base
+    100004: tower_middle
+    100006: tower_muzzle
+    100008: //RootNode
+    100010: tower_top
+    100012: transform1
+    400000: tower_barrel
+    400002: tower_base
+    400004: tower_middle
+    400006: tower_muzzle
+    400008: //RootNode
+    400010: tower_top
+    400012: transform1
+    2300000: tower_barrel
+    2300002: tower_base
+    2300004: tower_middle
+    2300006: tower_muzzle
+    2300008: tower_top
+    3300000: tower_barrel
+    3300002: tower_base
+    3300004: tower_middle
+    3300006: tower_muzzle
+    3300008: tower_top
+    4300000: tower_muzzle
+    4300002: tower_top
+    4300004: tower_barrel
+    4300006: tower_base
+    4300008: tower_middle
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Cruiser_pit
-    second: {fileID: 2100000, guid: 1a4e9c259064eb4418330018a8387503, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blinnCruiser_2
-    second: {fileID: 2100000, guid: 89e5507d25bb51249968ba26bd1d47a7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: blinn_cruiser_3
-    second: {fileID: 2100000, guid: cb07a705cd42a0f4e83daf65a1f9cbb9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert1
-    second: {fileID: 2100000, guid: 12c73185544f03544a0180ca4d8e9097, type: 2}
+      name: lambert2
+    second: {fileID: 2100000, guid: 84a8c42be7c2066469d3e203d25d8805, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -59,35 +66,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Cruiser_Roll
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []

@@ -1,17 +1,33 @@
 fileFormatVersion: 2
-guid: 5eff2d716bfacaa448314bdc6c05d7d1
-timeCreated: 1510263493
+guid: 8295b9774c3d7e645a624ed549277845
+timeCreated: 1512816413
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: pCube1
-    4300002: Cruiser
-    7400000: Cruiser_Roll
+    100000: cruiser_left
+    100002: cruiser_middle_left
+    100004: cruiser_middle_right
+    100006: //RootNode
+    100008: cruiser_right
+    400000: cruiser_left
+    400002: cruiser_middle_left
+    400004: cruiser_middle_right
+    400006: //RootNode
+    400008: cruiser_right
+    2300000: cruiser_left
+    2300002: cruiser_middle_left
+    2300004: cruiser_middle_right
+    2300006: cruiser_right
+    3300000: cruiser_left
+    3300002: cruiser_middle_left
+    3300004: cruiser_middle_right
+    3300006: cruiser_right
+    4300000: cruiser_middle_left
+    4300002: cruiser_middle_right
+    4300004: cruiser_left
+    4300006: cruiser_right
+    7400000: Take 001
     9500000: //RootNode
   externalObjects:
   - first:
@@ -59,35 +75,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Cruiser_Roll
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 40
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
