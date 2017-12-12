@@ -12,7 +12,7 @@ namespace Player
         public int UseCount;
         public Vector3 Center;
         public Vector3 HitBox;
-        public Collider[] colliders;
+        public Collider[] Colliders;
 
         private Vector3 position;
         
@@ -24,11 +24,11 @@ namespace Player
             var target = Physics.OverlapBoxNonAlloc(
                 Center, 
                 HitBox, 
-                colliders, 
+                Colliders, 
                 Quaternion.identity, 
                 1 << LayerMask.NameToLayer(Tag.Hitable));
             HasTarget = target > 0;
-            colliders
+            Colliders
                 .Where(e => e != null)
                 .ToList()
                 .ForEach(FindTarget);

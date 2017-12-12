@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Statics;
 using UnityEngine;
 using VolumetricLines;
 
 namespace Enemy.Boss
 {
-    [Serializable]
+    [System.Serializable]
     public class MouthShoot
     {
         public GameObject Laser;
@@ -21,7 +20,7 @@ namespace Enemy.Boss
 
         public void Shoot(GameObject entity, MonoBehaviour mb)
         {
-            var laser = GameObject.Instantiate(Laser);
+            var laser = Object.Instantiate(Laser);
             line = laser.GetComponent<VolumetricLineBehavior>();
             var offset = Offset - Vector3.right * line.EndPos.z;
             laser.SetPosition(entity.GetPosition() + offset);
@@ -44,7 +43,7 @@ namespace Enemy.Boss
                 line.LineWidth -= SizeUp;
                 yield return new WaitForSeconds(SizeUpRate);    
             }
-            GameObject.Destroy(entity);
+            Object.Destroy(entity);
         }
     }
 }

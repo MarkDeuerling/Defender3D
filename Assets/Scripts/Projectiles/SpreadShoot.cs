@@ -1,11 +1,9 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
-using Statics;
+﻿using Statics;
 using UnityEngine;
 
 namespace Projectiles
 {
-    [Serializable]
+    [System.Serializable]
     public class SpreadShoot
     {
         public GameObject BulletPref;
@@ -24,7 +22,7 @@ namespace Projectiles
 
         private void SpreadBullet(GameObject entity, int i)
         {
-            var bullet = GameObject.Instantiate(BulletPref);
+            var bullet = Object.Instantiate(BulletPref);
             bullet.SetPosition(entity.GetPosition() + Offset);
             var mul = i % 2 == 0 ? i : -1 * i; 
             var factor = Angle + Spread * mul;
