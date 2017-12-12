@@ -146,10 +146,10 @@ MonoBehaviour:
     Target: {fileID: 0}
   Health: 3
   LifeTime: 10
-  Patter: 0
+  Patter: 1
   HealthPowerUp: {fileID: 1026613582404864, guid: 3cf5ff5c16af6254196b66b2920e999e,
     type: 2}
-  SpecialPowerUp: {fileID: 1517856606050464, guid: 5524bd75fee38ba4abfdf34cde11655a,
+  SpecialPowerUp: {fileID: 1818487631890252, guid: f6edd6b0d50ac6944b6617a005895918,
     type: 2}
   DropChance: 3
   ExplosionPref: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
