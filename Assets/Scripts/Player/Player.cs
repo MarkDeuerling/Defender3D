@@ -1,4 +1,5 @@
 ﻿using Directives;
+using Enemy.Boss;
 using Projectiles;
 using Statics;
 using UnityEngine;
@@ -74,10 +75,22 @@ namespace Player
         private void Move()
         {
             var velocity = Game.CurrentState.Move;
+            AnimateMovement(velocity.y);
             velocity.Normalize();
             velocity *= MoveSpeed;
             var position = body.position + velocity * Time.fixedDeltaTime;
             body.MovePosition(Clamp(position));
+        }
+
+        private void AnimateMovement(float y)
+        {
+            var angle = transform.eulerAngles;
+            if (y > 0.1)
+                transform.eulerAngles = new Vector3(angle.x, angle.y, 25f);
+            else if (y < -0.1)
+                transform.eulerAngles = new Vector3(angle.x, angle.y, -25f);
+            else
+                transform.eulerAngles = new Vector3(angle.x, angle.y, 0);
         }
 
         private static Vector2 Clamp(Vector3 position)
@@ -96,7 +109,8 @@ namespace Player
                 return;
             Spawn(HitPref, 0.3f);
             Health--;
-            Destroy(entity.gameObject);
+            if (!entity.GetComponent<BossGreatLaser>())
+                Destroy(entity.gameObject);
             IsDead();
             Game.Execute(Game.PlayerHealthUpdate, gameObject);
             Game.Execute(Game.Hit, gameObject);
@@ -107,7 +121,8 @@ namespace Player
             if (Health > 0)
                 return;
             Spawn(ExplosionPref, 1.2f);
-            Game.LoadScene(Game.GameOver);
+            Game.Execute(Game.PlayerDie, gameObject);
+            Destroy(gameObject);
         }
 
         private void HealthPowerUp(Collider entity)

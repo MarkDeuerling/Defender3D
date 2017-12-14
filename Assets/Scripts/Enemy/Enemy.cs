@@ -104,9 +104,7 @@ namespace Enemy
         private void ShootTarget(float dt)
         {
             if (timer.IsTimeUp(dt, MoveAndShoot.StayTime))
-            {
                 MoveAndShoot.State = 1;
-            }
             else
             {
                 if (!shootTimer.IsTimeUp(dt, MoveAndShoot.Shooting.FireRate))

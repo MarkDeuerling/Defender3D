@@ -1,4 +1,4 @@
-﻿using Directives;
+﻿using System.ComponentModel;
 using Projectiles;
 using Statics;
 using UnityEngine;
@@ -14,17 +14,22 @@ namespace Enemy.Boss
 		public MouthShoot MouthShoot;
 		public ArmShoot ArmShoot; 
 
-		private Timer timer = new Timer();
-		private Timer mouthTimer = new Timer();
-		private Timer armTimer = new Timer();
-		private bool isBullets;
-		private int count = 10;
 		private int maxHealth;
 		private bool spawnOnHalf = true;
+		private Animator animator;
 
 		private void Start()
 		{
+			animator = GetComponent<Animator>();
 			maxHealth = Health;
+			ArmShoot.Initialize();
+			SpreadShoot.Initialize();
+			Game.Bind(Game.BossLaser, OnBossLaserStop);
+		}
+
+		private void OnDestroy()
+		{
+			Game.Unbind(Game.BossLaser, OnBossLaserStop);
 		}
 
 		private void OnTriggerEnter(Collider other)
@@ -49,32 +54,34 @@ namespace Enemy.Boss
 			Destroy(gameObject);
 		}
 
-		private void Spawn(GameObject prefab, GameObject hit, float destroyTime)
+		private static void Spawn(GameObject prefab, GameObject hit, float destroyTime)
 		{
 			var spawned = Instantiate(prefab);
 			spawned.SetPosition(hit.GetPosition());
 			Destroy(spawned, destroyTime);
 		}
 
+		private void OnBossLaserStop(GameObject entity)
+		{
+			MouthShoot.IsLaserShooting = false;
+		}
+
 		private void Update()
 		{
+			if (MouthShoot.IsLaserShooting)
+				return;
+			var dt = Time.deltaTime;
+			MouthShoot.Update(dt);
+			ArmShoot.Update(dt);
+			SpreadShoot.Update(dt);
 			RandomShoot();
 		}
 
 		private void RandomShoot()
 		{
-			if (count <= 0)
-				isBullets = false;
-			if (isBullets && count > 0)
-			{
-				ShootBullets();
-				count--;
-				
-				return;
-			}
-			count = 10;
-			var seed = Random.Range(0, 3);
-			switch (seed)
+			
+			var state = ChangeState();
+			switch (state)
 			{
 				case 0:
 					MouthLaser();
@@ -83,30 +90,35 @@ namespace Enemy.Boss
 					EyeShoot();
 					break;
 				case 2:
-					isBullets = true;
+					ShootBullets();
 					break;
+				default:
+					throw new InvalidEnumArgumentException();
 			}
 		}
 
+		private int ChangeState()
+		{
+			if (ArmShoot.CanShoot)
+				return 2;
+			ArmShoot.Initialize();
+			return Random.Range(0, 3);
+		}
+		
 		private void ShootBullets()
 		{
-			if (!armTimer.IsTimeUp(Time.deltaTime, ArmShoot.SpawnRate)) return;
 			ArmShoot.Shoot(gameObject);
-			armTimer.Reset();
 		}
 		
 		private void MouthLaser()
 		{
-			if (!mouthTimer.IsTimeUp(Time.deltaTime, MouthShoot.ShootRate)) return;
-			MouthShoot.Shoot(gameObject, this);
-			mouthTimer.Reset();
+			MouthShoot.Shoot(gameObject);
+			animator.SetBool("Mouth", true);
 		}
 
 		private void EyeShoot()
 		{
-			if (!timer.IsTimeUp(Time.deltaTime, SpreadShoot.ShootRate)) return;
 			SpreadShoot.Shoot(gameObject);
-			timer.Reset();
 		}
 	}
 }

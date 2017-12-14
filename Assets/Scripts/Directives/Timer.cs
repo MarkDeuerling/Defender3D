@@ -3,11 +3,10 @@
     public struct Timer
     {
         private float timeSum;
-        private bool hotStart;
 
         public void HotStart()
         {
-            hotStart = true;
+            timeSum = float.MaxValue;
         }
 
         public void Reset()
@@ -17,13 +16,10 @@
     
         public bool IsTimeUp(float dt, float matchTime)
         {
-            if (hotStart)
-            {
-                hotStart = false;
-                timeSum = matchTime;
-            }
+            if (timeSum > matchTime)
+                return true;
             timeSum += dt;
-            return timeSum > matchTime;
+            return false;
         }
     }
 }

@@ -198,7 +198,7 @@ MonoBehaviour:
     UseCount: 3
     Center: {x: 0, y: 0, z: 0}
     HitBox: {x: 20, y: 20, z: 20}
-    colliders:
+    Colliders:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}

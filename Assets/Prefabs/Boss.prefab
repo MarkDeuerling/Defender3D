@@ -829,18 +829,15 @@ MonoBehaviour:
       type: 2}
     Spread: 10
     Count: 3
-    Offset: {x: -4, y: 7, z: -8.92}
     ShootRate: 0.5
+    Offset: {x: -4, y: 7, z: -8.92}
   MouthShoot:
     Laser: {fileID: 1194530230798114, guid: 1b6b984b13246724f83baaa9af78940a, type: 2}
+    ShootRate: 15
     Offset: {x: -6, y: 3, z: 0}
-    Period: 2
-    MaxSize: 200
-    SizeUp: 10
-    SizeUpRate: 0.02
-    ShootRate: 1
   ArmShoot:
     BulletPref: {fileID: 1474771026728934, guid: ae9cc9e2b6869bd4cbdd494d3916ce06,
       type: 2}
-    SpawnRate: 0.1
+    Count: 5
+    SpawnRate: 0.5
     Offset: {x: -1.53, y: -2.42, z: 0}

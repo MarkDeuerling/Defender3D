@@ -1,4 +1,5 @@
-﻿using Statics;
+﻿using Directives;
+using Statics;
 using UnityEngine;
 
 namespace Projectiles
@@ -9,13 +10,30 @@ namespace Projectiles
         public GameObject BulletPref;
         public float Spread;
         public int Count;
-        public Vector3 Offset;
         public float ShootRate;
+        public Vector3 Offset;
 
         private const int Angle = 180;
+        private Timer timer = new Timer();
+        private bool canShoot;
+
+        public void Initialize()
+        {
+            timer.HotStart();
+        }
+        
+        public void Update(float dt)
+        {
+            if (!timer.IsTimeUp(dt, ShootRate))
+                return;
+            canShoot = true;
+            timer.Reset();
+        }
         
         public void Shoot(GameObject entity)
         {
+            if (!canShoot)
+                return;
             for (var i = 0; i < Count; ++i)
                 SpreadBullet(entity, i);
         }

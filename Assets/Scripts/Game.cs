@@ -18,6 +18,9 @@ public class Game : MonoBehaviour
     public const string GameOver = "GameOver";
     public const string ChangeLevel = "ChangeLevel";
     public const string DestroyEnemy = "DestroyEnemy";
+    public const string BossLaser = "BossLaser";
+    public const string PlayerDie = "PlayerDie";
+    
     
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
@@ -54,13 +57,12 @@ public class Game : MonoBehaviour
             .AddEvent(SpecialUpdate)
             .AddEvent(PlayerBind)
             .AddEvent(ChangeLevel)
-            .AddEvent(DestroyEnemy);
+            .AddEvent(DestroyEnemy)
+            .AddEvent(BossLaser)
+            .AddEvent(PlayerDie);
     }
 
-    private static void BindPlayer()
-    {
-        Bind(PlayerBind, OnPlayerBind);
-    }
+    
 
     private void BindHit()
     {
@@ -89,15 +91,33 @@ public class Game : MonoBehaviour
         UnBindPlayer();
         UnBindHit();
     }
+    
+    private void BindPlayer()
+    {
+        Bind(PlayerBind, OnPlayerBind);
+        Bind(PlayerDie, OnPlayerDie);
+    }
 
-    private static void UnBindPlayer()
+    private void UnBindPlayer()
     {
         Unbind(PlayerBind, OnPlayerBind);
+        Unbind(PlayerDie, OnPlayerDie);
     }
     
-    private static void OnPlayerBind(GameObject entity)
+    private void OnPlayerBind(GameObject entity)
     {
         Player = entity;
+    }
+
+    private void OnPlayerDie(GameObject entity)
+    {
+        StartCoroutine(Die());
+    }
+
+    private IEnumerator Die()
+    {
+        yield return new WaitForSeconds(2f);
+        LoadScene(GameOver);
     }
     
     private void Update()
