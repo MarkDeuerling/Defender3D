@@ -830,7 +830,7 @@ MonoBehaviour:
     Spread: 10
     Count: 3
     ShootRate: 0.5
-    Offset: {x: -4, y: 7, z: -8.92}
+    Offset: {x: -4, y: 7, z: 0}
   MouthShoot:
     Laser: {fileID: 1194530230798114, guid: 1b6b984b13246724f83baaa9af78940a, type: 2}
     ShootRate: 15

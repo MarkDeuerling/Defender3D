@@ -3,12 +3,13 @@ using UnityEngine;
 
 namespace GameCamera
 {
+    
     public class GameCamera : MonoBehaviour 
     {
         public float ShakeDuration;
         public float ShakeAmount = 0.7f;
         public float DecreaseFactor = 1.0f;
-	
+
         private Vector3 cachePosition;
         private float shakeDuration;
         private float enemyShakeAmount;
@@ -26,6 +27,7 @@ namespace GameCamera
         private void OnDestroy()
         {
             Game.Unbind(Game.Hit, OnHit);
+            Game.Unbind(Game.DestroyEnemy, OnDestroyEnemy);
         }
 
         private void OnHit(GameObject entity)
