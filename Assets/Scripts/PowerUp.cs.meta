@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 17d9bbdcfc4794e4397cd32436ecc5d9
-timeCreated: 1511736156
+timeCreated: 1514839474
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - DestroyPref: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

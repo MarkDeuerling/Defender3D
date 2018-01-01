@@ -19,8 +19,14 @@ namespace Level
         {
             timer = new Timer();
             startTimer = new Timer();
+            Game.Bind(Game.BossDied, OnBossDie);
         }
 
+        private void OnBossDie(GameObject entity)
+        {
+            Destroy(gameObject);
+        }
+        
         private void Update()
         {
             if (!startTimer.IsTimeUp(Time.deltaTime, StartSpawn))
@@ -36,6 +42,7 @@ namespace Level
 
         private void OnDestroy()
         {
+            Game.Unbind(Game.BossDied, OnBossDie);
             Game.Execute(Game.ChangeLevel, gameObject);
         }
     }

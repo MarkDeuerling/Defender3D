@@ -1,4 +1,5 @@
 ﻿using Directives;
+using Gui;
 using Projectiles;
 using Statics;
 using UnityEngine;
@@ -34,6 +35,21 @@ namespace Enemy
             body = this.GetRigidBody();
             Destroy(gameObject, LifeTime);
             ChoosePattern();   
+            Game.Bind(Game.BossDied, OnBossDie);
+        }
+
+        private void OnDestroy()
+        {
+            Spawn(ExplosionPref, gameObject, 1.2f);
+            Game.Execute(Game.ScoreUpdate, gameObject);
+            Game.Execute(Game.DestroyEnemy, gameObject);
+            Drop();
+            Game.Unbind(Game.BossDied, OnBossDie);
+        }
+
+        private void OnBossDie(GameObject entity)
+        {
+            Destroy(gameObject);
         }
 
         private void ChoosePattern()
@@ -165,10 +181,7 @@ namespace Enemy
         {
             if (Health > 0)
                 return;
-            Spawn(ExplosionPref, gameObject, 1.2f);
-            Game.Execute(Game.ScoreUpdate, gameObject);
-            Game.Execute(Game.DestroyEnemy, gameObject);
-            Drop();
+            
             Destroy(gameObject);
         }
 

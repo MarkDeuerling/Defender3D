@@ -52,6 +52,7 @@ namespace Enemy.Boss
 				return;
 			Spawn(DiePref, entity, 3f);
 			Destroy(gameObject);
+			Game.Execute(Game.BossDied, gameObject);
 		}
 
 		private static void Spawn(GameObject prefab, GameObject hit, float destroyTime)

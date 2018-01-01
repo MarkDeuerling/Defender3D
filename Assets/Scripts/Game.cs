@@ -16,11 +16,12 @@ public class Game : MonoBehaviour
     public const string Hit = "Hit";
     public const string Pause = "Pause";
     public const string GameOver = "GameOver";
+    public const string Win = "Win";
     public const string ChangeLevel = "ChangeLevel";
     public const string DestroyEnemy = "DestroyEnemy";
     public const string BossLaser = "BossLaser";
     public const string PlayerDie = "PlayerDie";
-    
+    public const string BossDied = "BossDie";
     
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
@@ -45,6 +46,7 @@ public class Game : MonoBehaviour
         Setup();
         BindPlayer();
         BindHit();
+        Bind(BossDied, OnBossDie);
     }
 
     private void Setup()
@@ -59,10 +61,9 @@ public class Game : MonoBehaviour
             .AddEvent(ChangeLevel)
             .AddEvent(DestroyEnemy)
             .AddEvent(BossLaser)
-            .AddEvent(PlayerDie);
+            .AddEvent(PlayerDie)
+            .AddEvent(BossDied);
     }
-
-    
 
     private void BindHit()
     {
@@ -90,6 +91,8 @@ public class Game : MonoBehaviour
     {
         UnBindPlayer();
         UnBindHit();
+        Unbind(BossDied, OnBossDie);
+        StopAllCoroutines();
     }
     
     private void BindPlayer()
@@ -104,9 +107,20 @@ public class Game : MonoBehaviour
         Unbind(PlayerDie, OnPlayerDie);
     }
     
-    private void OnPlayerBind(GameObject entity)
+    private static void OnPlayerBind(GameObject entity)
     {
         Player = entity;
+    }
+
+    private void OnBossDie(GameObject entity)
+    {
+        StartCoroutine(BossDie());
+    }
+
+    private static IEnumerator BossDie()
+    {
+        yield return new WaitForSeconds(2f);
+        LoadScene(Win);
     }
 
     private void OnPlayerDie(GameObject entity)
@@ -114,7 +128,7 @@ public class Game : MonoBehaviour
         StartCoroutine(Die());
     }
 
-    private IEnumerator Die()
+    private static IEnumerator Die()
     {
         yield return new WaitForSeconds(2f);
         LoadScene(GameOver);

@@ -1,9 +1,10 @@
-﻿using Statics;
+﻿using System;
+using Statics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace GameCamera
 {
-    
     public class GameCamera : MonoBehaviour 
     {
         public float ShakeDuration;
@@ -39,6 +40,8 @@ namespace GameCamera
                 case 2:
                     ppCam.UseGlitch = false;
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
         

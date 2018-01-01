@@ -10,6 +10,7 @@ TagManager:
   - Special
   - HPUP
   - SPUP
+  - Boss
   layers:
   - Default
   - TransparentFX
