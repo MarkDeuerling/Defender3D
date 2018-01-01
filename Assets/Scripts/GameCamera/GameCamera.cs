@@ -14,6 +14,7 @@ namespace GameCamera
         private float shakeDuration;
         private float enemyShakeAmount;
         private float cacheShakeAmount;
+        private PostProcessingCamera ppCam;
 
         private void Start()
         {
@@ -22,8 +23,25 @@ namespace GameCamera
             cachePosition = this.GetPosition();
             Game.Bind(Game.Hit, OnHit);
             Game.Bind(Game.DestroyEnemy, OnDestroyEnemy);
+            ppCam = GetComponent<PostProcessingCamera>();
         }
 
+        private void GlitchCam(int mode)
+        {
+            switch (mode)
+            {
+                case 0:
+                    ppCam.UseGlitch = true;
+                    break;
+                case 1:
+                    ppCam.GlitchConfig.Distortion = Random.Range(-0.5f, 0.5f);
+                    break;
+                case 2:
+                    ppCam.UseGlitch = false;
+                    break;
+            }
+        }
+        
         private void OnDestroy()
         {
             Game.Unbind(Game.Hit, OnHit);
@@ -34,6 +52,8 @@ namespace GameCamera
         {
             shakeDuration = ShakeDuration;
             ShakeAmount = cacheShakeAmount;
+            if (entity.Has(Tag.Player))
+                GlitchCam(0);
         }
 
         private void OnDestroyEnemy(GameObject entity)
@@ -45,9 +65,16 @@ namespace GameCamera
         private void Update()
         {
             if (shakeDuration > 0 && Time.timeScale >= 1)
+            {
                 Shake();
+                GlitchCam(1);
+            }
             else
+            {
                 this.SetPosition(cachePosition);
+            }
+            if (shakeDuration <= 0)
+                GlitchCam(2);
         }
 
         private void Shake()

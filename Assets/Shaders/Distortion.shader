@@ -17,7 +17,6 @@
         
         Cull Off
 		ZWrite Off
-//		Blend SrcAlpha OneMinusSrcAlpha
 		AlphaTest Off
 
 		Pass

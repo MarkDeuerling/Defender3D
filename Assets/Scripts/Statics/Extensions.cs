@@ -57,6 +57,11 @@ namespace Statics
         {
             return collider.gameObject.CompareTag(tag);
         }
+        
+        public static bool Has(this GameObject entity, string tag)
+        {
+            return entity.CompareTag(tag);
+        }
 
         public static Vector3 GetDirectionTo(
             this MonoBehaviour behaviour, GameObject entity)

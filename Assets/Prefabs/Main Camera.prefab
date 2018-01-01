@@ -93,14 +93,29 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1168251209304524}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cc8977777ecbf44eb6765adfdf963ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PostProcessingMaterial: {fileID: 2100000, guid: 5a248f3801bd12946acf05a9651b3b4a,
-    type: 2}
-  RadialBlur: {fileID: 2100000, guid: 90106b7e239f54e42aaba5348445e0e9, type: 2}
+  KernalSize: 0
+  UseGlitch: 0
+  GlitchConfig:
+    Distortion: 0.3
+    Cutoff: 0.1
+    Normalize: 1
+    UseBlend: 0
+    UseColor: 0
+    Color: {r: 0, g: 0, b: 0, a: 0}
+    BlendTex: {fileID: 0}
+    TransitionTex: {fileID: 2800000, guid: 2509c98e10018d6489c9c2c1212d8b84, type: 3}
+    Material: {fileID: 2100000, guid: 5a248f3801bd12946acf05a9651b3b4a, type: 2}
+  UseBlur: 0
+  BlurConfig:
+    Blur: 0.08
+    Bright: 1
+    Origin: {x: 0.5, y: 0.5}
+    Material: {fileID: 2100000, guid: 90106b7e239f54e42aaba5348445e0e9, type: 2}
 --- !u!114 &114368035436631116
 MonoBehaviour:
   m_ObjectHideFlags: 1
