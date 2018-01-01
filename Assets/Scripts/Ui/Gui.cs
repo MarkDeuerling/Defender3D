@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Gui
+namespace Ui
 {
     public class Gui : MonoBehaviour
     {

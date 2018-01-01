@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Gui
+namespace Ui
 {
     public class Gameover : MonoBehaviour
     {

@@ -1,5 +1,4 @@
 ﻿using Directives;
-using Gui;
 using Projectiles;
 using Statics;
 using UnityEngine;
@@ -43,7 +42,6 @@ namespace Enemy
             Spawn(ExplosionPref, gameObject, 1.2f);
             Game.Execute(Game.ScoreUpdate, gameObject);
             Game.Execute(Game.DestroyEnemy, gameObject);
-            Drop();
             Game.Unbind(Game.BossDied, OnBossDie);
         }
 
@@ -181,7 +179,7 @@ namespace Enemy
         {
             if (Health > 0)
                 return;
-            
+            Drop();
             Destroy(gameObject);
         }
 

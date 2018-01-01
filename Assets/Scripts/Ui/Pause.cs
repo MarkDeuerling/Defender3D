@@ -1,7 +1,7 @@
 ﻿using GameState;
 using UnityEngine;
 
-namespace Gui
+namespace Ui
 {
     public class Pause : MonoBehaviour
     {

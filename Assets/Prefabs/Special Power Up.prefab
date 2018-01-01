@@ -129,3 +129,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: -5
   DestroyTime: 10
+  DestroyPref: {fileID: 1000013462590818, guid: ecdd96beb7f93494880c052dfccf9dc1,
+    type: 2}

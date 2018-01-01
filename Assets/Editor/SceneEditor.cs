@@ -3,7 +3,7 @@ using UnityEditor.SceneManagement;
 
 namespace Editor
 {
-    public class SceneEditor 
+    public static class SceneEditor 
     {
         [MenuItem("Scenes/Game %g")]
         private static void OpenGame()
@@ -41,6 +41,12 @@ namespace Editor
         private static void OpenBoss()
         {
             EditorSceneManager.OpenScene("Assets/Scenes/BossLevel.unity", OpenSceneMode.Additive);
+        }
+        
+        [MenuItem("Scenes/Start %st")]
+        private static void OpenStart()
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/Start.unity");
         }
     }
 }
