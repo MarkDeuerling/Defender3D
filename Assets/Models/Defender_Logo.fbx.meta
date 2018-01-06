@@ -1,33 +1,26 @@
 fileFormatVersion: 2
-guid: 8792db3977a8d904facb94ec4e14a8ea
-timeCreated: 1515233085
+guid: c348e98095cc9e7479f08daa58e29fd1
+timeCreated: 1515234434
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: transform1
+    100004: typeMesh1
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Pickup_Health
-    7400000: Health_Rotate
+    400002: transform1
+    400004: typeMesh1
+    2300000: typeMesh1
+    3300000: typeMesh1
+    4300000: typeMesh1
     9500000: //RootNode
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Health_Body
-    second: {fileID: 2100000, guid: fc88b4464e783eb4e97af7914e692a22, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert2
-    second: {fileID: 2100000, guid: 84a8c42be7c2066469d3e203d25d8805, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: phong1
-    second: {fileID: 2100000, guid: fea92188a25d5ec458da50521c10c129, type: 2}
+      name: typeBlinn
+    second: {fileID: 2100000, guid: 41f7d2aa7591fc34499fc974bf4bdc43, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -53,35 +46,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Health_Rotate
-      takeName: Take 001
-      firstFrame: 1
-      lastFrame: 120
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -102,7 +67,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
