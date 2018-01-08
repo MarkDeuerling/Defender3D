@@ -72,9 +72,7 @@ namespace GameCamera
                 Blur(src, temp); 
             }
             if (UseGlitch)
-            {
                 Glitch(temp, dest);
-            }
             if (!UseGlitch)
                 Graphics.Blit(temp, dest);
             if (usedRenderTexture)
