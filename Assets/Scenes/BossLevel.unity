@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44414607, g: 0.49357325, b: 0.57298917, a: 1}
+  m_IndirectSpecularColor: {r: 0.44414663, g: 0.49357384, b: 0.57299, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -216,6 +216,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 23689621737505910, guid: 4e231318be8f0424985680adfbba7b55,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5067ed7eb51713b4689fa979b8da8e08, type: 2}
+    - target: {fileID: 23372366190278174, guid: 4e231318be8f0424985680adfbba7b55,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e2f44d83259a3c14abd33197677dbc91, type: 2}
+    - target: {fileID: 23296067381144532, guid: 4e231318be8f0424985680adfbba7b55,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5067ed7eb51713b4689fa979b8da8e08, type: 2}
+    - target: {fileID: 23864445998509468, guid: 4e231318be8f0424985680adfbba7b55,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33f00b115559a9046b0e89cc3563440b, type: 2}
+    - target: {fileID: 23662220124791830, guid: 4e231318be8f0424985680adfbba7b55,
+        type: 2}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33f00b115559a9046b0e89cc3563440b, type: 2}
+    - target: {fileID: 23690617743554748, guid: 4e231318be8f0424985680adfbba7b55,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33f00b115559a9046b0e89cc3563440b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e231318be8f0424985680adfbba7b55, type: 2}
   m_IsPrefabParent: 0

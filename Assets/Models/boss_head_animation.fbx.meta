@@ -67,12 +67,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blinn_boss_cover
-    second: {fileID: 2100000, guid: 5cb677e7a77589f4982789e1d5cf2a3a, type: 2}
+    second: {fileID: 2100000, guid: 579677225b23f80428a27b34d8f988e3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blinn_boss_eye
-    second: {fileID: 2100000, guid: 3021680b5c7d6964ab51652408355827, type: 2}
+    second: {fileID: 2100000, guid: d2b0f5770ab771143a5f987b5934c62e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -82,27 +82,27 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blinn_boss_mouth
-    second: {fileID: 2100000, guid: f1baba90fdaed314782751f1865e2560, type: 2}
+    second: {fileID: 2100000, guid: 1a4e9c259064eb4418330018a8387503, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blinn_boss_shoulders
-    second: {fileID: 2100000, guid: 2832def4b3f5bbb47ae278f03f812943, type: 2}
+    second: {fileID: 2100000, guid: 9d68fcaa970cae844910b95c3b77e866, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blinn_boss_teeth
-    second: {fileID: 2100000, guid: 3215a60cbffe0784d81a7ddc388b848f, type: 2}
+    second: {fileID: 2100000, guid: 33f00b115559a9046b0e89cc3563440b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: blinn_shoulder_spikes
-    second: {fileID: 2100000, guid: 579677225b23f80428a27b34d8f988e3, type: 2}
+    second: {fileID: 2100000, guid: 33f00b115559a9046b0e89cc3563440b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: boss_arms
-    second: {fileID: 2100000, guid: 4ec2feb776082bc4aa2fccdcc8abb69b, type: 2}
+    second: {fileID: 2100000, guid: 3215a60cbffe0784d81a7ddc388b848f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -112,7 +112,7 @@ ModelImporter:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
