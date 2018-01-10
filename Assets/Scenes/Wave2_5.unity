@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 669632197}
   - component: {fileID: 669632196}
   m_Layer: 0
-  m_Name: Wave2
+  m_Name: Wave2_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0310d18a439884e99da7ce4ea49f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentScene: Wave2
-  NextScene: Wave2_5
+  CurrentScene: Wave2_5
+  NextScene: Wave3
   SpawnCount: 4
 --- !u!4 &669632197
 Transform:
@@ -168,7 +168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10.2
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.z
@@ -240,7 +240,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.5
+      value: 3.14
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.z
@@ -312,7 +312,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.2
+      value: -4.27
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.z
