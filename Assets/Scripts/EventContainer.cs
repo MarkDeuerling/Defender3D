@@ -28,6 +28,11 @@ public class EventContainer
         container[eventName] -= callBack;
     }
 
+    public void Clear()
+    {
+        container.Clear();
+    }
+
     public void Execute(string eventName, GameObject entity)
     {
         CallBack callBack;

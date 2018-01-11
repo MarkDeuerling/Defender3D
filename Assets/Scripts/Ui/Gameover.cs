@@ -6,6 +6,7 @@ namespace Ui
     public class Gameover : MonoBehaviour
     {
         private const string Game = "Game";
+        
         public void OnRestart()
         {
             SceneManager.LoadScene(Game);

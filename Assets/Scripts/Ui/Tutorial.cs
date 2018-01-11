@@ -8,6 +8,8 @@ namespace Ui
 		public void OnBack()
 		{
 			SceneManager.LoadScene("Start");
+			SceneManager.LoadScene("Environment", LoadSceneMode.Additive);
+			SceneManager.LoadScene("Camera", LoadSceneMode.Additive);
 		}
 	}
 }

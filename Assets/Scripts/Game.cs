@@ -25,12 +25,13 @@ public class Game : MonoBehaviour
     public const string PlayerDie = "PlayerDie";
     public const string BossDied = "BossDie";
     public const string BossSpawn = "BossSpawn";
-    public const string GameStart = "GameStart";
     
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
     private static Game game;
+    
     public static GameObject Player { get; private set; }
+    public static bool IsReady { get; private set; }
         
     public static IGameState CurrentState
     {
@@ -41,6 +42,7 @@ public class Game : MonoBehaviour
     private void Awake()
     {
         game = this;
+        IsReady = true;
         Time.timeScale = 1;
         Application.targetFrameRate = 60;
     }
@@ -104,6 +106,7 @@ public class Game : MonoBehaviour
     
     private void OnDestroy()
     {
+        IsReady = false;
         UnBindPlayer();
         UnBindHit();
         Unbind(BossDied, OnBossDie);
@@ -184,16 +187,19 @@ public class Game : MonoBehaviour
 
     public static void Bind(string name, EventContainer.CallBack callback)
     {
-        game.eventContainer.Bind(name, callback);
+        if (IsReady)
+            game.eventContainer.Bind(name, callback);
     }
 
     public static void Unbind(string name, EventContainer.CallBack callBack)
     {
-        game.eventContainer.Unbind(name, callBack);
+        if (IsReady)
+            game.eventContainer.Unbind(name, callBack);
     }
 
     public static void Execute(string name, GameObject entity)
     {
-        game.eventContainer.Execute(name, entity);
+        if (IsReady)
+            game.eventContainer.Execute(name, entity);
     }
 }

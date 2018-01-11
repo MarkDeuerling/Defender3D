@@ -1,5 +1,6 @@
 ﻿using GameState;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Ui
 {
@@ -21,7 +22,9 @@ namespace Ui
 
         public void OnClose()
         {
-            Application.Quit();
+            SceneManager.LoadScene("Start");
+            SceneManager.LoadScene("Camera", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Environment", LoadSceneMode.Additive);
         }
     }
 }

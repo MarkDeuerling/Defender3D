@@ -22,11 +22,13 @@ namespace Ui
 
         public void OnStart()
         {
+            Time.timeScale = 1;
             StartCoroutine(Transition());
         }
 
         private IEnumerator Transition()
         {
+            GetComponent<Canvas>().enabled = false;
             PlayerTransition.SetActive(true);
             yield return new WaitForSeconds(WaitTimePlayer);
             camMove.enabled = true;
@@ -39,6 +41,11 @@ namespace Ui
         public void OnTutorial()
         {
             SceneManager.LoadScene("Tutorial");
-        }        
+        }
+
+        public void OnQuit()
+        {
+            Application.Quit();
+        }
     }
 }

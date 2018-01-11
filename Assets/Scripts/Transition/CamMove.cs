@@ -26,6 +26,8 @@ namespace Transition
 
         private void OnDestroy()
         {
+            if (PlayTransform == null)
+                return;
             transform.position = PlayTransform.position;
             transform.rotation = PlayTransform.rotation;
             GetComponent<GameCamera.GameCamera>().enabled = true;
@@ -33,6 +35,8 @@ namespace Transition
 
         private void Update()
         {
+            if (PlayTransform == null)
+                return;
             transform.position = Vector3.MoveTowards(
                 transform.position, 
                 PlayTransform.position, 
