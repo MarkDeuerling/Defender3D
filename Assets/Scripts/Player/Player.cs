@@ -103,6 +103,11 @@ namespace Player
 
         private void OnTriggerEnter(Collider entity)
         {
+            if (entity.Has(Tag.Boss))
+            {
+                Health = 0;
+                IsDead();
+            }
             HealthPowerUp(entity);
             SpecialPowerUp(entity);
             if (entity.HasNot(Tag.Enemy))

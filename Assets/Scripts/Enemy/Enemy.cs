@@ -39,14 +39,17 @@ namespace Enemy
 
         private void OnDestroy()
         {
+            Game.Unbind(Game.BossDied, OnBossDie);
+            if (Health > 0)
+                return;
             Spawn(ExplosionPref, gameObject, 1.2f);
             Game.Execute(Game.ScoreUpdate, gameObject);
             Game.Execute(Game.DestroyEnemy, gameObject);
-            Game.Unbind(Game.BossDied, OnBossDie);
         }
 
         private void OnBossDie(GameObject entity)
         {
+            Spawn(ExplosionPref, gameObject, 1.2f);
             Destroy(gameObject);
         }
 
@@ -204,12 +207,12 @@ namespace Enemy
             var random = Random.Range(0, DropChance);
             switch (random)
             {
-                case 0:
-                    Instantiate(HealthPowerUp).SetPosition(this.GetPosition());
-                    break;
-                case 1:
-                    Instantiate(SpecialPowerUp).SetPosition(this.GetPosition());
-                    break;
+            case 0:
+                Instantiate(HealthPowerUp).SetPosition(this.GetPosition());
+                break;
+            case 1:
+                Instantiate(SpecialPowerUp).SetPosition(this.GetPosition());
+                break;
             }
         }
     }

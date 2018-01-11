@@ -9,5 +9,6 @@
         public const string Hitable = "Hitable";
         public const string HPUP = "HPUP";
         public const string SPUP = "SPUP";
+        public const string Boss = "Boss";
     }
 }
