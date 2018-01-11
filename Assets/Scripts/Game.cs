@@ -63,6 +63,7 @@ public class Game : MonoBehaviour
                 if (env)
                     env.enabled = true;
             });
+        Camera.main.GetComponent<BackgroundMusic>().PlayRun();
     }
 
     private void Setup()

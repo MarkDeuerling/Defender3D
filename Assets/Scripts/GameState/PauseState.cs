@@ -12,6 +12,7 @@ namespace GameState
         {
             if (!Input.GetKeyDown(KeyCode.P))
                 return;
+            Camera.main.GetComponent<BackgroundMusic>().SetVolume(0.1f);
             Game.UnloadScene(Game.Pause);
             Time.timeScale = 1;
             Game.CurrentState = new PlayerState();
