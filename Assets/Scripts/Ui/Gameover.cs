@@ -9,6 +9,8 @@ namespace Ui
         public void OnRestart()
         {
             SceneManager.LoadScene(Game);
+            SceneManager.LoadScene("Environment", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Camera", LoadSceneMode.Additive);
         }
 
         public void OnClose()

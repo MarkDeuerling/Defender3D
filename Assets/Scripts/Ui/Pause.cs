@@ -7,7 +7,9 @@ namespace Ui
     {
         public void OnRestart()
         {
-            Game.LoadScene("Game");    
+            Game.LoadScene("Game");   
+            Game.AddScene("Environment");
+            Game.AddScene("Camera");
         }
         
         public void OnResume()

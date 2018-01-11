@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114368035436631116}
   - component: {fileID: 114778761134778948}
   - component: {fileID: 114087964825702914}
+  - component: {fileID: 114449171216683518}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -108,7 +109,7 @@ MonoBehaviour:
     UseColor: 0
     Color: {r: 0, g: 0, b: 0, a: 0}
     BlendTex: {fileID: 0}
-    TransitionTex: {fileID: 2800000, guid: 2509c98e10018d6489c9c2c1212d8b84, type: 3}
+    TransitionTex: {fileID: 2800000, guid: 4c6dfda3d9f1a81499f8438a5b85450a, type: 3}
     Material: {fileID: 2100000, guid: 5a248f3801bd12946acf05a9651b3b4a, type: 2}
   UseBlur: 0
   BlurConfig:
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1168251209304524}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90fc230d8e83e2945a1e15cb65059902, type: 3}
   m_Name: 
@@ -130,6 +131,22 @@ MonoBehaviour:
   ShakeDuration: 0.5
   ShakeAmount: 1
   DecreaseFactor: 2.05
+--- !u!114 &114449171216683518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1168251209304524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad3a86846865254294f14597a148ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartTransform: {fileID: 0}
+  PlayTransform: {fileID: 0}
+  TransitionSpeed: 100
+  RotationFactor: 10
+  TransitionTime: 5
 --- !u!114 &114778761134778948
 MonoBehaviour:
   m_ObjectHideFlags: 1

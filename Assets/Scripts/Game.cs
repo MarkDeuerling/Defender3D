@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using GameState;
+using Level;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,6 +25,7 @@ public class Game : MonoBehaviour
     public const string PlayerDie = "PlayerDie";
     public const string BossDied = "BossDie";
     public const string BossSpawn = "BossSpawn";
+    public const string GameStart = "GameStart";
     
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
@@ -42,12 +45,22 @@ public class Game : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
         Setup();
         BindPlayer();
         BindHit();
         Bind(BossDied, OnBossDie);
+        yield return null;
+        SceneManager
+            .GetSceneByName("Environment")
+            .GetRootGameObjects().ToList()
+            .ForEach(e =>
+            {
+                var env = e.GetComponent<Environment>();
+                if (env)
+                    env.enabled = true;
+            });
     }
 
     private void Setup()

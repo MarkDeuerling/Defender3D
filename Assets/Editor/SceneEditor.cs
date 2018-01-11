@@ -47,6 +47,8 @@ namespace Editor
         private static void OpenStart()
         {
             EditorSceneManager.OpenScene("Assets/Scenes/Start.unity");
+            EditorSceneManager.OpenScene("Assets/Scenes/Environment.unity", OpenSceneMode.Additive);
+            EditorSceneManager.OpenScene("Assets/Scenes/Camera.unity", OpenSceneMode.Additive);
         }
     }
 }
