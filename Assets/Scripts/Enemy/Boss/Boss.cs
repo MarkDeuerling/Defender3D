@@ -25,6 +25,7 @@ namespace Enemy.Boss
 			ArmShoot.Initialize();
 			SpreadShoot.Initialize();
 			Game.Bind(Game.BossLaser, OnBossLaserStop);
+			Game.Execute(Game.BossSpawn, gameObject);
 		}
 
 		private void OnDestroy()

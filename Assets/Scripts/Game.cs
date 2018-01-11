@@ -22,6 +22,7 @@ public class Game : MonoBehaviour
     public const string BossLaser = "BossLaser";
     public const string PlayerDie = "PlayerDie";
     public const string BossDied = "BossDie";
+    public const string BossSpawn = "BossSpawn";
     
     private IGameState currentState = new PlayerState();    
     private readonly EventContainer eventContainer = new EventContainer();
@@ -62,7 +63,8 @@ public class Game : MonoBehaviour
             .AddEvent(DestroyEnemy)
             .AddEvent(BossLaser)
             .AddEvent(PlayerDie)
-            .AddEvent(BossDied);
+            .AddEvent(BossDied)
+            .AddEvent(BossSpawn);
     }
 
     private void BindHit()
