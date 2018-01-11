@@ -211,8 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d0310d18a439884e99da7ce4ea49f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentScene: Wave1
-  NextScene: Wave1_5
+  CurrentScene: Wave1_5
+  NextScene: Wave2
   SpawnCount: 8
 --- !u!4 &335080887
 Transform:
@@ -236,7 +236,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 21.16
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.y
@@ -308,7 +308,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 14.66
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.y
@@ -452,7 +452,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 22.1
+      value: 7.1
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.y
@@ -596,7 +596,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15
+      value: 21.41
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.y
@@ -668,7 +668,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 22.1
+      value: 14.51
       objectReference: {fileID: 0}
     - target: {fileID: 4983164722699226, guid: 91680081112a5b845ae93403a77e4022, type: 2}
       propertyPath: m_LocalPosition.y
