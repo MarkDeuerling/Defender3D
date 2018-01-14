@@ -12,7 +12,8 @@ namespace Enemy.Boss
 		public GameObject DiePref;
 		public SpreadShoot SpreadShoot;
 		public MouthShoot MouthShoot;
-		public ArmShoot ArmShoot; 
+		public ArmShoot ArmShoot;
+		public Movement Movement;
 
 		private int maxHealth;
 		private bool spawnOnHalf = true;
@@ -26,6 +27,7 @@ namespace Enemy.Boss
 			SpreadShoot.Initialize();
 			Game.Bind(Game.BossLaser, OnBossLaserStop);
 			Game.Execute(Game.BossSpawn, gameObject);
+			Movement.Init();
 		}
 
 		private void OnDestroy()
@@ -77,6 +79,7 @@ namespace Enemy.Boss
 			ArmShoot.Update(dt);
 			SpreadShoot.Update(dt);
 			RandomShoot();
+			Movement.Move(dt, this);
 		}
 
 		private void RandomShoot()
