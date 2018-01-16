@@ -156,5 +156,5 @@ MonoBehaviour:
   StartScenes:
   - GUI
   - Player
-  - BossLevel
+  - Wave1
   TimeStop: 0.02
