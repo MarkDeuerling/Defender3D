@@ -84,7 +84,6 @@ namespace Enemy.Boss
 
 		private void RandomShoot()
 		{
-			
 			var state = ChangeState();
 			switch (state)
 			{

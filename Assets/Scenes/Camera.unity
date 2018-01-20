@@ -257,6 +257,16 @@ Prefab:
       propertyPath: UseGlitch
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114087964825702914, guid: d61c985c47d3c564388b7083d798e7d3,
+        type: 2}
+      propertyPath: UseBlur
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114087964825702914, guid: d61c985c47d3c564388b7083d798e7d3,
+        type: 2}
+      propertyPath: BlurConfig.Blur
+      value: 0.11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d61c985c47d3c564388b7083d798e7d3, type: 2}
   m_IsPrefabParent: 0
