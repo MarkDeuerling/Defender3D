@@ -36,6 +36,11 @@ namespace Player
 
         private void FindTarget(Collider collider)
         {
+            if (collider.Has("Boss"))
+            {
+                HasTarget = false;
+                return;
+            }
             var entity = Object.Instantiate(Bullet);
             var bullet = entity.GetSpecialBullet();
             bullet.SetPosition(position + new Vector3(0,0,Random.value*10));

@@ -102,6 +102,8 @@ public class Game : MonoBehaviour
     {
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(TimeStop);
+        if (CurrentState.GetType() == typeof(PauseState))
+            yield break;
         Time.timeScale = 1;
     }
     
