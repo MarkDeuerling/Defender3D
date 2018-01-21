@@ -50,5 +50,12 @@ namespace Editor
             EditorSceneManager.OpenScene("Assets/Scenes/Environment.unity", OpenSceneMode.Additive);
             EditorSceneManager.OpenScene("Assets/Scenes/Camera.unity", OpenSceneMode.Additive);
         }
+
+        [MenuItem("Scenes/First")]
+        private static void OpenFirst()
+        {
+            EditorSceneManager.OpenScene("Assets/Scenes/First.unity");
+        }
+        
     }
 }
