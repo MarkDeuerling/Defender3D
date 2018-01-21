@@ -156,5 +156,5 @@ MonoBehaviour:
   StartScenes:
   - GUI
   - Player
-  - Wave2_5
+  - Wave1
   TimeStop: 0.02
